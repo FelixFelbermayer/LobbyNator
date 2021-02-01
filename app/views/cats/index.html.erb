@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cats</h1>
+
+<%= link_to 'New Cat', new_cat_path, class: "buttonlike" %>
+
+
+<% @cats.each do |cat| %>
+  <h1><%= cat.name %></h2>
+  <p>
+    <%= link_to 'Show', cat, class: "buttonlike" %>
+    <%= link_to 'Edit', edit_cat_path(cat), class: "buttonlike" %>
+    <%= link_to 'Destroy', cat, class: "buttonlike", method: :delete, data: { confirm: 'Are you sure?' } %>      
+  </p>  
+  <% if cat.catpic.attached? %>
+    <%= image_tag url_for(cat.catpic), class: 'smallpic' %>
+  <% end %>  
+
+<% end %>
+
+
+

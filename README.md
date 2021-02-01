@@ -1,24 +1,33 @@
-# README
+# Example Rails App with ActiveStorage
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To prepare the database
 
-Things you may want to cover:
+    rails active_storage:install
+    rails db:migrate
 
-* Ruby version
+Information about uploaded files is stored in two tables,
+you only need to add one line to your model to add one or many files:
 
-* System dependencies
+    class Cat < ApplicationRecord
+      has_one_attached :catpic
+    end
 
-* Configuration
+Display the image:
 
-* Database creation
+    <% if @cat.catpic.attached? %>
+      <%= image_tag url_for(@cat.catpic) %>
+    <% end %>
 
-* Database initialization
+Form to upload:
 
-* How to run the test suite
+    <div class="field">
+      <%= form.label :catpic %>
+      <%= form.file_field :catpic %>
+    </div>
 
-* Services (job queues, cache servers, search engines, etc.)
+Don't forget to allow this parameter in the controller:
 
-* Deployment instructions
-
-* ...
+    # Only allow a list of trusted parameters through.
+    def cat_params
+      params.require(:cat).permit(:name, :catpic)
+    end

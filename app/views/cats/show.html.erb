@@ -1,0 +1,10 @@
+
+
+<h1><%= @cat.name %></h1>
+<p><%= link_to 'Edit', edit_cat_path(@cat) %> </p>
+
+  <% if @cat.catpic.attached? %>
+    <%= image_tag url_for(@cat.catpic) %>
+  <% end %>
+
+

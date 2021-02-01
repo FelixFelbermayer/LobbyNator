@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LobbyNator</title>
+    <title>BestCats</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
   </head>
 
   <body>
+    <nav>
+      <%= link_to "Katzen", root_path %>
+    </nav>
+    <div><p id="notice"><%= notice %></p></div>
     <%= yield %>
   </body>
 </html>

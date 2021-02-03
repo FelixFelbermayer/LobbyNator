@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lobbynator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.scss" />
+</head>
+<body>
+    <header>
+        <h1 class="headerHeading">Lobbynator</h1>
+        <div class="_div_heading_middle">
+            <button class="_btn_header till_desktop openfilters">Filters</button>
+            
+            <button class="_btn_header after_tablet openfilters _btn_cat">
+                Games
+            </button>
+            <button class="_btn_header after_tablet openfilters _btn_cat">
+                Language
+            </button>
+            <button class="_btn_header after_tablet openfilters _btn_cat">
+                Voicechat
+            </button>
+            <button class="_btn_header after_tablet openfilters _btn_cat">
+                Skilllevel
+            </button>
+        </div>
+        <nav>
+            <div class="burger">
+                <div class="burgerelement line1"></div>
+                <div class="burgerelement line2"></div>
+                <div class="burgerelement line3"></div>
+            </div>
+        </nav>
+    </header>
+    <ul class="nav-links">
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="#">Log out</a></li>
+    </ul>
+    
+    <section class="_section_pagemeta disabled">
+        <div>
+            <div class="_div_flexwrap">
+                <button class="_btn_header till_desktop _btn_cat2">
+                    Games
+                </button>
+                <button class="_btn_header till_desktop _btn_cat2">
+                    Language
+                </button>
+                <button class="_btn_header till_desktop _btn_cat2">
+                    Voicechat
+                </button>
+                <button class="_btn_header till_desktop _btn_cat2">
+                    Skilllevel
+                </button>
+            </div>
+
+            <input type="text" placeholder="Filter Tags" id="filtersearch">  
+            <div class="_div_filterlist _div_filtercategory disabled">
+                <p class="_p_info _p_filterelement">League of Legends</p>
+                <p class="_p_info _p_filterelement">Counter Strike</p>
+                <p class="_p_info _p_filterelement">Among Us</p>
+                <p class="_p_info _p_filterelement">EOS Online</p>
+                <p class="_p_info _p_filterelement">Teamfight Tactics</p>
+            </div>
+            <div class="_div_filterlist _div_filtercategory disabled">
+                <p class="_p_info _p_filterelement">English</p>
+                <p class="_p_info _p_filterelement">Deutsch</p>
+                <p class="_p_info _p_filterelement">German</p>
+                <p class="_p_info _p_filterelement">Estereichisch</p>
+            </div>
+            <div class="_div_filterlist _div_filtercategory disabled">
+                <p class="_p_info _p_filterelement">Discord</p>
+                <p class="_p_info _p_filterelement">Teamspeak</p>
+                <p class="_p_info _p_filterelement">Teams</p>
+                <p class="_p_info _p_filterelement">Skype</p>
+            </div>
+            <div class="_div_filterlist _div_filtercategory disabled">
+                <p class="_p_info _p_filterelement">Intermediate</p>
+                <p class="_p_info _p_filterelement">Expert</p>
+                <p class="_p_info _p_filterelement">Beginner</p>
+                <p class="_p_info _p_filterelement">Fortnitekid</p>
+            </div>
+            <div class="_div_filterlist" id="selectedFilters">
+            </div>
+        </div>
+        <div class="_div_flexaround">
+            <button class="_btn_header" id="closefilters">Close</button>
+            <button class="_btn_header" id="applyfilters">Apply</button>
+        </div>
+    </section>
+
+    <main class="_main_grid">
+        <div class="_div_gridcard _div_gridcard_image">
+            <img src="images/CSGO.jpg">
+        </div>
+        <div class="_div_gridcard">
+            <div>
+                <h2 class="_h2_level2">Gemütliche Runde CSGO mit meinen Freunden die ich sehr</h2>
+                <p class="_p_important">in 3 hours</p>
+                <p class="_p_info">suche nach netten Spielern für ein paar runden Noobs ballern suche nach netten Spielern für ein paar runden Noobs ballern...suche nach netten Spielern für ein paar runden Noobs ballern...</p>
+                <div>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                </div>
+            </div>
+            <div class="_div_endFlex">
+                <button class="_btn_important">Join</button>
+                <p class="_p_lobbyfill">3/5 in Lobby</p>
+            </div>
+        </div>
+        <div class="_div_gridcard">
+            <div>
+                <h2 class="_h2_level2">Gemütliche Runde CSGO mit meinen Freunden die ich sehr</h2>
+                <p class="_p_important">in 3 hours</p>
+                <p class="_p_info">suche nach netten Spielern für ein paar runden Noobs ballern suche nach netten Spielern für ein paar runden Noobs ballern...suche nach netten Spielern für ein paar runden Noobs ballern...</p>
+                <div>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                </div>
+            </div>
+            <div class="_div_endFlex">
+                <button class="_btn_important">Join</button>
+                <p class="_p_lobbyfill">3/5 in Lobby</p>
+            </div>
+        </div>
+        <div class="_div_gridcard">
+            <div>
+                <h2 class="_h2_level2">Gemütliche Runde CSGO mit meinen Freunden die ich sehr</h2>
+                <p class="_p_important">in 3 hours</p>
+                <p class="_p_info">suche nach netten Spielern für ein paar runden Noobs ballern suche nach netten Spielern für ein paar runden Noobs ballern...suche nach netten Spielern für ein paar runden Noobs ballern...</p>
+                <div>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                </div>
+            </div>
+            <div class="_div_endFlex">
+                <button class="_btn_important">Join</button>
+                <p class="_p_lobbyfill">3/5 in Lobby</p>
+            </div>
+        </div>
+        <div class="_div_gridcard">
+            <div>
+                <h2 class="_h2_level2">Gemütliche Runde CSGO mit meinen Freunden die ich sehr</h2>
+                <p class="_p_important">in 3 hours</p>
+                <p class="_p_info">suche nach netten Spielern für ein paar runden Noobs ballern suche nach netten Spielern für ein paar runden Noobs ballern...suche nach netten Spielern für ein paar runden Noobs ballern...</p>
+                <div>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                </div>
+            </div>
+            <div class="_div_endFlex">
+                <button class="_btn_important">Join</button>
+                <p class="_p_lobbyfill">3/5 in Lobby</p>
+            </div>
+        </div>
+        <div class="_div_gridcard _div_gridcard_image">
+            <img src="images/CSGO.jpg">
+        </div>
+        <div class="_div_gridcard">
+            <div>
+                <h2 class="_h2_level2">Gemütliche Runde CSGO mit meinen Freunden die ich sehr</h2>
+                <p class="_p_important">in 3 hours</p>
+                <p class="_p_info">suche nach netten Spielern für ein paar runden Noobs ballern suche nach netten Spielern für ein paar runden Noobs ballern...suche nach netten Spielern für ein paar runden Noobs ballern...</p>
+                <div>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                    <p class="_p_info">Medium</p>
+                </div>
+            </div>
+            <div class="_div_endFlex">
+                <button class="_btn_important">Join</button>
+                <p class="_p_lobbyfill">3/5 in Lobby</p>
+            </div>
+        </div>
+    </main>
+        <!-- <button class="_btn_big _btn_floating _btn_add">Create Lobby</button> -->
+        <script src="scripts/filter_script.js"></script>
+        <script src="/scripts/header_script.js"></script>
+</body>
+</html>

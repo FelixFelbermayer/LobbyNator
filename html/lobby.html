@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lobbynator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.scss" />
+</head>
+<body>
+    <header>
+        <h1 class="headerHeading">Lobbynator</h1>
+        <nav>
+            <div class="burger">
+                <div class="burgerelement line1"></div>
+                <div class="burgerelement line2"></div>
+                <div class="burgerelement line3"></div>
+            </div>
+        </nav>
+    </header>
+    <ul class="nav-links">
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="#">Log out</a></li>
+    </ul>
+    <main class="_main_grid">
+        <section class="_section_lobby">
+            <div class="_div_lobbyimage">
+                <img src="images/CSGO.jpg"/>
+            </div>
+            <div class="_div_lobbymeta">
+                <h2>Global Grind</h2>
+                <div class="_div_subsection active">
+                    <h3 class="_h3_subheading">Description</h3>
+                    <div class="_div_subsection_content">
+                        <p class="_p_description">
+                            Hier werden gemütlich die Noobs geballert.
+                        </p>
+                    </div>
+                </div>
+                <div class="_div_subsection">
+                    <h3 class="_h3_subheading">Tags</h3>
+                    <div class="_div_subsection_content _div_flextags">
+                        <p class="_p_lobbytag">League of Legends</p>
+                        <p class="_p_lobbytag">Englisch</p>
+                        <p class="_p_lobbytag">Intermediate</p>
+                        <p class="_p_lobbytag">Discord</p>
+                    </div>
+                </div>
+                <div class="_div_subsection">
+                    <h3 class="_h3_subheading">Members</h3>
+                    <div class="_div_subsection_content _div_flextags">
+                        <p class="_p_lobbytag">Izzy</p>
+                        <p class="_p_lobbytag">Vali-Noobslayer</p>
+                        <p class="_p_lobbytag">Feci#Blrmn</p>
+                        <p class="_p_lobbytag">FerdiSchießdaneben</p>
+                    </div>
+                </div>
+                <button class="_btn_big after_tablet">Leave</button>
+            </div>
+            <div class="_div_chat">
+                <h3>Chat</h3>
+                <ul class="_ul_chatmessages">
+                    <li class="_li_message">
+                        <p class="_p_message_text">Zocken um 9?Zocken um 9?Zocken um 9?Zocken um 9?</p>
+                        <p class="_p_message_author">Stemai</p>
+                    </li>
+                    <li class="_li_message">
+                        <p class="_p_message_text">Zocken um 9?</p>
+                        <p class="_p_message_author">Stemai</p>
+                    </li>
+                    <li class="_li_message_self _li_message">
+                        <p class="_p_message_text">Zocken um 9?</p>
+                        <p class="_p_message_author">Stemai</p>
+                    </li>
+                    <li class="_li_message">
+                        <p class="_p_message_text">Zocken um 9?</p>
+                        <p class="_p_message_author">Stemai</p>
+                    </li>
+                    <li class="_li_message">
+                        <p class="_p_message_text">Zocken um 9?</p>
+                        <p class="_p_message_author">Stemai</p>
+                    </li>
+                    <li class="_li_message_self _li_message">
+                        <p class="_p_message_text">Zocken um 9?</p>
+                        <p class="_p_message_author">Stemai</p>
+                    </li>
+                    <li class="_li_message">
+                        <p class="_p_message_text">Zocken um 9?</p>
+                        <p class="_p_message_author">Stemai</p>
+                    </li>
+                    <li class="_li_message">
+                        <p class="_p_message_text">Zocken um 9?</p>
+                        <p class="_p_message_author">Stemai</p>
+                    </li>
+                    <li class="_li_message_self _li_message">
+                        <p class="_p_message_text">Zocken um 9?</p>
+                        <p class="_p_message_author">Stemai</p>
+                    </li>
+                    <li class="_li_message">
+                        <p class="_p_message_text">Zocken um 9?</p>
+                        <p class="_p_message_author">Stemai</p>
+                    </li>
+                    <li class="_li_message">
+                        <p class="_p_message_text">Zocken um 9?</p>
+                        <p class="_p_message_author">Stemai</p>
+                    </li>
+                    <li class="_li_message_self _li_message">
+                        <p class="_p_message_text">Zocken um 9?</p>
+                        <p class="_p_message_author">Stemai</p>
+                    </li>
+                </ul>
+                <form action="test.php">
+                    <input type="text" placeholder="message">
+                    <button type="submit" class="_btn_imagebtn">
+                        <img class="img_submitimg" src="images/send.svg">
+                    </button>
+                </form>
+            </div>
+            <button class="_btn_big till_desktop">Leave</button>
+
+        </section>
+    </main>
+    <script src="/scripts/header_script.js"></script>
+    <script src="/scripts/lobby_script.js"></script>
+</body>
+</html>

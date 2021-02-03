@@ -1,0 +1,68 @@
+.card{
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 12.5rem;
+    padding: .75rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: 0;
+    flex-basis: 55%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-right: 5vw; 
+    box-shadow: 5px 5px 10px black; 
+    @include breakpoint(tablet){
+        max-width: 16rem;
+        margin-right: 2vw;
+    } 
+    .cardHeading{
+        font-family: Roboto;
+        text-decoration: underline;
+        @include breakpoint(tablet){
+            font-size: 1.5rem;
+        }
+    }    
+    .cardTime{
+        font-family: Roboto;
+        color: $green;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+        @include breakpoint(tablet){
+            font-size: 1.5rem;
+        }
+    } 
+    .cardDescription{
+        font-family: Roboto;
+        margin-bottom: 1vh;
+        word-wrap: break-word;
+        @include breakpoint(tablet){
+            font-size: 1.5rem;
+        }
+    }
+    .filter-wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        p{
+            border: 1px solid black;
+            margin-right: 5px;
+            border-radius: 10px;
+            padding: 5px 10px 5px 10px;
+            margin-bottom: .5vh;
+            font-family: Roboto;
+            @include breakpoint(tablet){
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .buttonContainer{
+        display: flex;
+        justify-content: space-between;
+    }
+    .single{
+        justify-content: center;
+    }
+}

@@ -1,0 +1,44 @@
+@mixin breakpoint($medium){
+
+    @if($medium == tablet){
+        @media only screen and(min-width: 570px){
+            @content;
+        }
+    }
+    @else if($medium == desktop1){
+        @media only screen and (min-width: 1025px){
+            @content;
+        }
+    }
+    @else if($medium == desktop2){
+        @media only screen and (min-width: 1400px){
+            @content;
+        }
+    }
+}
+
+
+.after_mobile{
+    display: none;
+    @include breakpoint(tablet){
+        display: initial;
+    }
+}
+
+.after_tablet{
+    display: none;
+    @include breakpoint(desktop1){
+        display: initial;
+    }
+}
+
+.till_tablet{
+    @include breakpoint(tablet){
+        display: none;
+    }
+}
+.till_desktop{
+    @include breakpoint(desktop1){
+        display: none;
+    }
+}

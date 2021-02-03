@@ -1,0 +1,438 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+	 v2.0 | 20110126
+	 License: none (public domain)
+	 Changed from CSS to SASS
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+body {
+  line-height: 1;
+  overflow-x: hidden; }
+ol, ul {
+  list-style: none; }
+blockquote, q {
+  quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+.after_mobile {
+  display: none; }
+@media only screen and (min-width: 570px) {
+    .after_mobile {
+      display: inline;
+      display: initial; } }
+.after_tablet {
+  display: none; }
+@media only screen and (min-width: 1025px) {
+    .after_tablet {
+      display: inline;
+      display: initial; } }
+@media only screen and (min-width: 570px) {
+  .till_tablet {
+    display: none; } }
+@media only screen and (min-width: 1025px) {
+  .till_desktop {
+    display: none; } }
+._p_important {
+  color: pink;
+  font-family: 'Roboto';
+  font-size: 1.4rem; }
+._p_info, ._p_lobbyfill {
+  font-family: 'Roboto';
+  font-size: 1rem;
+  min-width: 70px;
+  color: #CCC6BD; }
+._p_lobbyfill {
+  color: black; }
+._h2_level2 {
+  font-family: 'Roboto';
+  font-size: 1.2rem; }
+header {
+  height: 8vh;
+  border-bottom: 3px solid orange;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1; }
+header .burger {
+    margin-right: 20px;
+    cursor: pointer; }
+.headerHeading {
+  font-size: 2.5rem;
+  color: #D50814;
+  font-family: Snes;
+  margin-left: 20px;
+  text-shadow: 1px 1px 2.5px black;
+  letter-spacing: 1.5px;
+  text-align: center; }
+@media only screen and (min-width: 570px) {
+    .headerHeading {
+      font-size: 3rem;
+      margin-top: 1vh; } }
+@media only screen and (min-width: 1025px) {
+    .headerHeading {
+      font-size: 3.5rem; } }
+.burgerelement {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 5px;
+  border-radius: 10px; }
+.nav-links {
+  position: fixed;
+  height: 20vh;
+  width: 50%;
+  background-color: white;
+  box-shadow: -2px 6px 10px black;
+  margin-left: 50%;
+  transform: translateX(150%);
+  transition: transform 0.5s ease-in; }
+@media only screen and (min-width: 1025px) {
+    .nav-links {
+      width: 25%;
+      margin-left: 75%; } }
+.nav-links li {
+    margin-top: 5vh;
+    text-align: center; }
+.nav-links li a {
+      font-family: Roboto;
+      text-decoration: none;
+      color: black;
+      font-size: 1.3rem; }
+.nav-links li a:hover {
+      color: green; }
+.nav--state-active {
+  transform: translateX(0); }
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-8px, 6px); }
+.toggle .line2 {
+  opacity: 0; }
+.toggle .line3 {
+  transform: rotate(45deg) translate(-7px, -6px); }
+main._main_grid {
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+  grid-gap: 10px;
+  gap: 10px;
+  justify-content: space-evenly;
+  margin-top: 10px; }
+.grid::after {
+  content: "";
+  flex: auto; }
+@media only screen and (min-width: 570px) {
+  section._section_filtercontainer {
+    align-self: center; } }
+section._section_filtercontainer ul._ul_filtercategories {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 1rem;
+  gap: 1rem;
+  margin-bottom: 10px; }
+@media only screen and (min-width: 570px) {
+    section._section_filtercontainer ul._ul_filtercategories {
+      grid-gap: 1.5rem;
+      gap: 1.5rem; } }
+section._section_filtercontainer ul._ul_filtercategories li {
+    font-family: 'Roboto';
+    font-size: 1.8rem;
+    transition: 0.5s; }
+@media only screen and (min-width: 570px) {
+      section._section_filtercontainer ul._ul_filtercategories li {
+        font-size: 2.3rem; } }
+section._section_filtercontainer ul._ul_filtercategories li.active {
+    text-decoration: underline;
+    -webkit-text-decoration-color: #00793B;
+            text-decoration-color: #00793B; }
+section._section_filtercontainer ul._ul_filtercategories li:hover {
+    cursor: pointer;
+    text-decoration: underline; }
+section._section_filtercontainer input._input_searchfilter {
+  font-family: 'Roboto';
+  font-size: 1rem;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 0.7rem;
+  border: 1px solid #b6b6b6; }
+section._section_filtercontainer input._input_searchfilter:focus, section._section_filtercontainer input._input_searchfilter:active {
+    border-radius: 0.7rem;
+    border: 2px solid #00793B;
+    outline: none; }
+section._section_filtercontainer ul._ul_filters {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 0.5rem;
+  gap: 0.5rem;
+  margin-bottom: 10px; }
+section._section_filtercontainer ul._ul_filters.disabled {
+    display: none; }
+@media only screen and (min-width: 570px) {
+    section._section_filtercontainer ul._ul_filters {
+      max-width: 50vw; } }
+section._section_filtercontainer ul._ul_filters li {
+    display: inline-block;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    border: 1px solid #b6b6b6;
+    border-radius: 1rem; }
+@media only screen and (min-width: 570px) {
+      section._section_filtercontainer ul._ul_filters li {
+        font-size: 1.5rem; } }
+section._section_filtercontainer ul._ul_filters li.active {
+    background-color: #b6b6b6;
+    color: white; }
+section._section_filtercontainer ul._ul_filters li.disabled {
+    display: none; }
+section._section_filtercontainer ul._ul_filters li:hover {
+    cursor: pointer; }
+h2._h2_sectionheading {
+  font-family: 'Snes';
+  color: #00793B;
+  font-size: 3rem;
+  display: inline-block;
+  margin-right: 10px; }
+section._section_userinfo {
+  margin-bottom: 10px; }
+section._section_userinfo .disabled {
+    display: none; }
+section._section_userinfo p, section._section_userinfo label {
+    font-size: 1.2rem;
+    font-family: 'Roboto';
+    margin-bottom: 0.5rem; }
+section._section_userinfo input[type="submit"] {
+    margin-top: 20px;
+    margin-bottom: 20px; }
+textarea {
+  resize: none; }
+.createLobbyContainer {
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 3vh;
+  padding: 5vw 5vw 2vw 5vw;
+  text-align: center; }
+@media only screen and (min-width: 1025px) {
+    .createLobbyContainer {
+      width: 60vw;
+      border: 1px solid black;
+      box-shadow: 4px 5px 10px black; } }
+.createLobbyContainer .nameContainer, .createLobbyContainer .gameContainer, .createLobbyContainer .descriptionContainer, .createLobbyContainer .maxPlayerContainer {
+    text-align: left; }
+.createLobbyContainer .nameContainer label, .createLobbyContainer .gameContainer label, .createLobbyContainer .descriptionContainer label, .createLobbyContainer .maxPlayerContainer label {
+      font-family: Roboto;
+      font-size: 2rem; }
+.createLobbyContainer .nameContainer input, .createLobbyContainer .gameContainer input, .createLobbyContainer .descriptionContainer input, .createLobbyContainer .maxPlayerContainer input {
+      height: 5vh;
+      font-size: 1.5rem;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      margin-top: 1vh;
+      width: 100%;
+      border-bottom: 1px solid black; }
+.createLobbyContainer .nameContainer input:focus, .createLobbyContainer .nameContainer input input[type]:focus, .createLobbyContainer .gameContainer input:focus, .createLobbyContainer .gameContainer input input[type]:focus, .createLobbyContainer .descriptionContainer input:focus, .createLobbyContainer .descriptionContainer input input[type]:focus, .createLobbyContainer .maxPlayerContainer input:focus, .createLobbyContainer .maxPlayerContainer input input[type]:focus {
+        outline: none; }
+.createLobbyContainer .nameContainer .select-wrapper select, .createLobbyContainer .gameContainer .select-wrapper select, .createLobbyContainer .descriptionContainer .select-wrapper select, .createLobbyContainer .maxPlayerContainer .select-wrapper select {
+      font-family: 'Roboto';
+      font-size: 1.5rem;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      border-radius: 0.7rem;
+      border: 1px solid #62606E;
+      background-color: transparent;
+      width: 5vw;
+      min-width: 50px;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      margin-top: 1.3vh; }
+.createLobbyContainer .nameContainer .select-wrapper select:focus, .createLobbyContainer .nameContainer .select-wrapper select:active, .createLobbyContainer .gameContainer .select-wrapper select:focus, .createLobbyContainer .gameContainer .select-wrapper select:active, .createLobbyContainer .descriptionContainer .select-wrapper select:focus, .createLobbyContainer .descriptionContainer .select-wrapper select:active, .createLobbyContainer .maxPlayerContainer .select-wrapper select:focus, .createLobbyContainer .maxPlayerContainer .select-wrapper select:active {
+        border-radius: 0.7rem;
+        border: 2px solid #00793B;
+        outline: none; }
+.createLobbyContainer .maxPlayerContainer {
+    margin-top: 1.7vh; }
+.createLobbyContainer .descriptionContainer {
+    text-align: left;
+    margin-top: 1.7vh; }
+.createLobbyContainer .descriptionContainer textarea {
+      margin-top: 2vh;
+      font-size: 1.5rem;
+      width: 100%;
+      font-family: Roboto;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: 1px solid black; }
+.createLobbyContainer .descriptionContainer textarea:focus, .createLobbyContainer .descriptionContainer textarea input[type]:focus {
+        outline: none; }
+.createLobbyContainer .descriptionContainer textarea::-moz-placeholder {
+        font-size: 1.5rem;
+        font-family: Roboto; }
+.createLobbyContainer .descriptionContainer textarea:-ms-input-placeholder {
+        font-size: 1.5rem;
+        font-family: Roboto; }
+.createLobbyContainer .descriptionContainer textarea::placeholder {
+        font-size: 1.5rem;
+        font-family: Roboto; }
+.createLobbyContainer ._section_filtercontainer {
+    text-align: left;
+    margin-top: 5vh; }
+.cardContainer {
+  display: flex;
+  overflow-x: auto;
+  width: 100vw;
+  margin-top: 2vh; }
+.cardImage {
+  height: 25vh;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem; }
+.scrolling-cards {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+@media only screen and (min-width: 1025px) {
+    .scrolling-cards {
+      flex-wrap: wrap; } }
+._btn_important {
+  font-family: 'Roboto';
+  font-size: 2.5rem;
+  border: none;
+  background: none;
+  color: orange;
+  text-transform: uppercase;
+  height: 2.5rem;
+  margin: 0;
+  padding: 0; }
+._btn_header {
+  color: black;
+  background: none;
+  border: none;
+  font-family: 'Roboto';
+  font-size: 2rem; }
+._btn_header.active {
+    color: purple; }
+._btn_header:hover {
+    color: purple; }
+._div_gridcard {
+  display: inline-block;
+  min-height: 300px;
+  min-width: 300px;
+  max-width: 400px;
+  max-height: 400px;
+  width: 80vw;
+  height: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #b6b6b6; }
+@media only screen and (min-width: 570px) {
+    ._div_gridcard {
+      width: 15vw;
+      height: 15vw;
+      max-width: 600px;
+      max-height: 600px; } }
+._div_gridcard img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: top;
+       object-position: top; }
+._div_gridcard > div {
+    margin-top: 10px;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    grid-gap: 5px;
+    gap: 5px; }
+._div_gridcard > div div {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap; }
+._div_gridcard div._div_endFlex {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: 10px; }
+._div_gridcard_image {
+  overflow: hidden; }
+section._section_pagemeta {
+  background-color: orange;
+  padding: 10px;
+  position: fixed;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+@media only screen and (min-width: 1025px) {
+    section._section_pagemeta {
+      position: relative;
+      height: auto; } }
+section._section_pagemeta input {
+    background-color: darkorange;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-family: 'Roboto';
+    font-size: 1.2rem;
+    padding: 3px 10px;
+    margin-bottom: 5px; }
+section._section_pagemeta ._div_filterlist {
+    padding: 0px 5px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap; }
+section._section_pagemeta ._div_filterlist:nth-of-type(2) {
+      border-bottom: 1px solid white;
+      margin-bottom: 10px; }
+@media only screen and (min-width: 570px) {
+      section._section_pagemeta ._div_filterlist {
+        width: 90%; } }
+section._section_pagemeta ._div_filterlist .selected {
+      color: #b6b6b6; }
+section._section_pagemeta ._div_filterlist .selected::after {
+        margin-left: 5px;
+        content: 'X'; }
+section._section_pagemeta ._div_filterlist p {
+      margin: 0px 10px 10px 0px; }
+._div_flexaround {
+  display: flex;
+  justify-content: space-around; }
+._div_flexwrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%; }
+section.disabled {
+  display: none; }
+div._div_heading_middle {
+  display: flex;
+  margin: auto;
+  grid-gap: 10px;
+  gap: 10px; }
+@font-face {
+  font-family: 'Snes';
+  src: url("/Snes.95b1c6d3.ttf");
+  /* IE9 Compat Modes */
+  src: local(""), url("/Snes.95b1c6d3.ttf") format("truetype"); }
+
+
+/*# sourceMappingURL=/main.48b3db1d.css.map */

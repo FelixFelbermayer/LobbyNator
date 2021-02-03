@@ -1,0 +1,10 @@
+main._main_grid{
+    display: flex;
+    width: 80vw;
+    margin: 0 auto;
+    margin-top: 5vh;
+    flex-direction: column;
+    @include breakpoint(tablet){
+        width: 70vw;
+    }
+}

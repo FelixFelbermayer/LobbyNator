@@ -1,0 +1,92 @@
+
+._btn_big{
+    background-color: $green;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 0.8rem;
+    padding: 5px 10px;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    max-width: 250px;
+    width: fit-content;
+    @include breakpoint(tablet){
+        font-size: 1.8rem;
+        padding: 7px 15px;
+    }
+    
+    &:hover{
+        background-color: $greenhover;
+    }
+}
+._btn_medium{
+    background-color: $green;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 0.8rem;
+    padding: 5px 10px;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    max-width: 250px;
+    width: fit-content;
+    @include breakpoint(tablet){
+        font-size: 1.3rem;
+        padding: 4px 10px;
+    }
+    
+    &:hover{
+        background-color: $greenhover;
+    }
+}
+
+button._btn_add{
+    &::after{
+        content: '+';
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: 0.5s;
+        margin-left: 5px;
+    }
+}
+
+button._btn_floating{
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+}
+
+
+button._btn_imagebtn{
+    background-color: transparent;
+    border: none;
+    img.img_submitimg{
+    }
+}
+
+.after_mobile{
+    display: none;
+    @include breakpoint(tablet){
+        display: initial;
+    }
+}
+
+.after_tablet{
+    display: none;
+    @include breakpoint(desktop1){
+        display: initial;
+    }
+}
+
+.till_tablet{
+    @include breakpoint(tablet){
+        display: none;
+    }
+}
+.till_desktop{
+    @include breakpoint(desktop1){
+        display: none;
+    }
+}

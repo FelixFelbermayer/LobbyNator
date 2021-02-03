@@ -1,0 +1,54 @@
+._div_gridcard{
+    display: inline-block;
+    min-height: 300px;
+    min-width: 300px;
+    max-width: 400px;
+    max-height: 400px;
+    width: 80vw;
+    height: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    @include breakpoint(tablet){
+        width: 15vw;
+        height: 15vw;
+        max-width: 600px;
+        max-height: 600px;
+    }
+
+    img{
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    background-color: $filtergrey;
+    
+    & > div{
+        margin-top: 10px;
+        padding: 0px 10px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 5px;
+
+        div{
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        
+    }
+    div._div_endFlex{
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+}
+
+._div_gridcard_image{
+    overflow: hidden;
+}

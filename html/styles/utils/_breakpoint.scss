@@ -1,0 +1,18 @@
+@mixin breakpoint($medium){
+
+    @if($medium == tablet){
+        @media only screen and(min-width: 570px){
+            @content;
+        }
+    }
+    @else if($medium == desktop1){
+        @media only screen and (min-width: 1025px){
+            @content;
+        }
+    }
+    @else if($medium == desktop2){
+        @media only screen and (min-width: 1400px){
+            @content;
+        }
+    }
+}

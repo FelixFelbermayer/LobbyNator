@@ -1,0 +1,83 @@
+textarea{
+    resize: none;
+}
+.createLobbyContainer{
+    width: 80vw;
+    margin: 0 auto;
+    margin-top: 3vh;
+    padding: 5vw 5vw 2vw 5vw;
+    text-align: center;
+    @include breakpoint(desktop1){
+        width: 60vw;
+        border: 1px solid black;
+        box-shadow: 4px 5px 10px black;
+    }
+    .nameContainer, .gameContainer, .descriptionContainer, .maxPlayerContainer{
+        text-align: left;
+        label{
+            font-family: Roboto;
+            font-size: 2rem;
+        }
+        input{
+            height: 5vh;
+            font-size: 1.5rem;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            margin-top: 1vh;
+            width: 100%;
+            border-bottom: 1px solid black;
+            &:focus, input[type]:focus{
+                outline: none;
+            }
+        }
+        .select-wrapper select{
+            font-family: 'Roboto';
+            font-size: 1.5rem;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+            border-radius: 0.7rem;
+            border: 1px solid #62606E;
+            background-color: transparent;
+            width: 5vw;
+            min-width: 50px;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: 1.3vh;
+            &:focus, &:active {
+                border-radius: 0.7rem;
+                border: 2px solid $green;
+                outline: none;
+            }
+        }
+    }
+    .maxPlayerContainer{
+        margin-top: 1.7vh;
+    }
+    .descriptionContainer{
+        text-align: left;
+        margin-top: 1.7vh;
+        textarea{
+            margin-top: 2vh;
+            font-size: 1.5rem;
+            width: 100%;
+            font-family: Roboto;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: 1px solid black;
+            &:focus, input[type]:focus{
+                outline: none;
+            }
+            &::placeholder { 
+                font-size: 1.5rem;
+                font-family: Roboto;
+            }
+        }
+    }
+    ._section_filtercontainer{
+        text-align: left;
+        margin-top: 5vh;
+    }
+}

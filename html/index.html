@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lobbynator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.scss" />
+</head>
+<body>
+    <header>
+        <h1 class="headerHeading">Lobbynator</h1>
+        <nav>
+            <div class="burger">
+                <div class="burgerelement line1"></div>
+                <div class="burgerelement line2"></div>
+                <div class="burgerelement line3"></div>
+            </div>
+        </nav>
+    </header>
+    <ul class="nav-links">
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="#">Log out</a></li>
+    </ul>
+
+    <main class="_main_grid">
+        <section class="_section_filtercontainer">
+            <ul class="_ul_filtercategories">
+                <li class="_li_filtercategory active">Game</li>
+                <li class="_li_filtercategory">Language</li>
+                <li class="_li_filtercategory">Level</li>
+                <li class="_li_filtercategory">Voicechat</li>
+            </ul>
+            <input type="text" class="_input_searchfilter" placeholder="Search" id="filtersearch"/>
+
+            <ul class="_ul_filters">
+                <li class="_li_singlefilter active">League of Legends</li>
+                <li class="_li_singlefilter">Counter Strike</li>
+                <li class="_li_singlefilter">Among us</li>
+                <li class="_li_singlefilter">Among you</li>
+                <li class="_li_singlefilter active">League of Legends</li>
+                <li class="_li_singlefilter">Counter Strike</li>
+                <li class="_li_singlefilter">Among us</li>
+                <li class="_li_singlefilter">Among you</li>
+            </ul>
+            <ul class="_ul_filters disabled" >
+                <li class="_li_singlefilter active">English</li>
+                <li class="_li_singlefilter">German</li>
+                <li class="_li_singlefilter">Spanish</li>
+                <li class="_li_singlefilter">France</li>
+                <li class="_li_singlefilter">Russian</li>
+            </ul>
+            <ul class="_ul_filters disabled" >
+                <li class="_li_singlefilter active">Intermediate</li>
+                <li class="_li_singlefilter">Pro</li>
+                <li class="_li_singlefilter">Casual</li>
+                <li class="_li_singlefilter">Beginner</li>
+            </ul>
+            <ul class="_ul_filters disabled" >
+                <li class="_li_singlefilter active">Discord</li>
+                <li class="_li_singlefilter">Microsoft Teams</li>
+                <li class="_li_singlefilter">Skype</li>
+                <li class="_li_singlefilter">Teamspeak</li>
+            </ul>
+            <button class="_btn_big">Apply</button>
+        </section>
+        <div class="cardContainer">
+            <img src="images/CSGO.jpg" alt="Csgo Image" class="cardImage">
+            <div class="scrolling-cards">
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>  
+                    <div class="buttonContainer">
+                        <button class="_btn_medium">Join</button>  
+                        <button class="_btn_medium">Join</button>  
+                        <button class="_btn_medium">Join</button>  
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">alslhfsdhfjsdlhfksjdhfsdkjhfksjdhfksjdhfkj hkljdhf kjsdhf klsdh suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>
+                    <div class="buttonContainer single">
+                        <button class="_btn_medium">Join</button>  
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="cardContainer">
+            <img src="images/CSGO.jpg" alt="Csgo Image" class="cardImage">
+            <div class="scrolling-cards">
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>  
+                </div>
+                <div class="card">
+                    <div class="cardTop">
+                        <h3 class="cardHeading">Gemütliche Rudnde CSGO</h3>
+                        <h4 class="cardTime">in 3 houres</h4>
+                        <h4 class="cardDescription">suche nach netten Spielern für ein paar runden cs!</h4>
+                    </div>
+                    <div class="filter-wrapper">
+                        <p>Medium</p>
+                        <p>English</p>
+                        <p>Discord</p>
+                        <p>Teamspeak</p>
+                        <p>Microsoft Teamspeak</p>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </main>
+        <button class="_btn_big _btn_floating _btn_add">Create Lobby</button>
+        <script src="scripts/filter_script.js"></script>
+        <script src="/scripts/header_script.js"></script>
+</body>
+</html>

@@ -39,7 +39,9 @@ l3.filters.push(strikt)
 
 l.users.push(feci)
 l.users.push(stef)
+l2.users.push(feci)
 l2.users.push(stef)
+l3.users.push(feci)
 
 l.save()
 l2.save()

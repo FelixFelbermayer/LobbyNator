@@ -8,7 +8,7 @@
           </button>
         <% end %>
     </div>
-        <button class="_btn_header">Create Lobby</button>
+    <%=  button_to 'New Lobby', "#{new_lobby_path}", class: "_btn_header", method: :get %>
     <nav>
         <div class="burger">
             <div class="burgerelement line1"></div>
@@ -18,8 +18,8 @@
     </nav>
 </header>
 <ul class="nav-links">
-    <li><a>Profile</a></li>
-    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    <li><%= link_to "Profile",  "users/#{current_user.id}" ,method: :get %></li>
+    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 </ul>
 <section class="_section_pagemeta disabled">
     <div>
@@ -46,13 +46,6 @@
           </div>
         <% end %>
         <div class="_div_filterlist" id="selectedFilters">
-          <%
-=begin%>
- <% current_user.filters.each do |selectedfilter| %>
-            <p class="_p_info _p_filterelement selected immutable"><%= selectedfilter.name %></p>
-          <% end %> 
-<%
-=end%>
         </div>
     </div>
     <div class="_div_flexaround">
@@ -69,11 +62,7 @@
         <% end %>
     </div>
 </section>
-<%
-=begin%>
- <%= link_to 'New Lobby', new_lobby_path, class: "buttonlike" %> 
-<%
-=end%>
+
 
 <main class="_main_grid">
   <% @lobbies.each do |lobby| %>
@@ -90,9 +79,10 @@
         </div>
         <div class="_div_endFlex">
             <% if lobby.users.include?(current_user) %>
-              <button class="_btn_important">View</button>
+              <%= button_to 'View', lobby_path(lobby), class: '_btn_important', method: :get %>
             <% else %>
-              <button class="_btn_important">Join</button>
+
+              <%= button_to 'Join', join_path(:lobby => lobby), method: :post, class: '_btn_important' %>
             <% end %>
             <p class="_p_lobbyfill">3/5 in Lobby</p>
         </div>

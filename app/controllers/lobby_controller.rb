@@ -23,7 +23,9 @@ class LobbyController < ApplicationController
 
     def new
       @lobby = Lobby.new
+      @categories = Filtercategory.all()
       @lobby.user = current_user
+
     end
 
     def destroy
@@ -50,10 +52,13 @@ class LobbyController < ApplicationController
     end
 
     def create
+      @filter = Filter.where(name: params["filter"])
       @lobby = Lobby.new(lobby_params)
       @lobby.user = current_user
-     # @lobby.date = lobby_params["date"]
+      @lobby.time = Time.parse(lobby_params["time"]).strftime('%H:%M')
       @lobby.users.push(current_user)
+      @lobby.filters << @filter
+
       respond_to do |format|
         if @lobby.save
           format.html { redirect_to @lobby, notice: "Cat was successfully created." }
@@ -73,7 +78,7 @@ class LobbyController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lobby_params
-      params.require(:lobby).permit(:name, :description, :user, :date)
+      params.require(:lobby).permit(:name, :description, :user, :date, :time, :filter)
     end
 
     def join_params

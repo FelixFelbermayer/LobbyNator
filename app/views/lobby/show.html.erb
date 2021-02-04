@@ -1,9 +1,10 @@
 <h1><%= @lobby.name %></h1>
 <p><%= @lobby.description %></p>
 
+<p><%= @lobby.users.size %>/
+<%= @lobby.maxplayers%> players joined this lobby</p>
+
 <h2>Members:</h2>
-
-
 <% if user_signed_in? %>
 
   <% @lobby.users.each do |lobby| %>
@@ -28,12 +29,8 @@
 
 <% @lobby.chatmessages.each do |textObject| %>
     <%= textObject.text %>
-    <% a = textObject.created_at.strftime("%H:%M") %>
-    
-    
-    <%= a %><br>
-
-
+    <% textMessage = textObject.created_at.strftime("%H:%M") %>
+    <%= textMessage %><br>
   <%end%>
 
 <% end %> 

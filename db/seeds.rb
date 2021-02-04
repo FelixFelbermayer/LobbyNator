@@ -27,9 +27,9 @@ stef = User.create(username: "Stef", email: "stef@lobby.com", password: "test123
 feci.filters.push(strikt)
 stef.filters.push(lol)
 
-l = Lobby.create(name: "Lobby 1", description: "Feci carrien", user: feci, date: Time.now)
-l2 = Lobby.create(name: "Lobby 2", description: "Feci carrien sonntags", user: feci, date: Time.now)
-l3 = Lobby.create(name: "Lobby 3", description: "Feci carrien samstags", user: feci, date: Time.now)
+l = Lobby.create(name: "Lobby 1", description: "Feci carrien", user: feci, date: Time.now, maxplayers: 4)
+l2 = Lobby.create(name: "Lobby 2", description: "Feci carrien sonntags", user: feci, date: Time.now, maxplayers: 5)
+l3 = Lobby.create(name: "Lobby 3", description: "Feci carrien samstags", user: feci, date: Time.now, maxplayers: 8)
 
 l.filters.push(strikt)
 l2.filters.push(lol)

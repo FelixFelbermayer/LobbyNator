@@ -63,7 +63,7 @@
     </div>
 </section>
 
-
+<div><p id="notice"><%= notice %></p></div>
 <main class="_main_grid">
   <% @lobbies.each do |lobby| %>
      <div class="_div_gridcard">
@@ -81,11 +81,17 @@
             <% if lobby.users.include?(current_user) %>
               <%= button_to 'View', lobby_path(lobby), class: '_btn_important', method: :get %>
             <% else %>
-
-              <%= button_to 'Join', join_path(:lobby => lobby), method: :post, class: '_btn_important' %>
+              <% if lobby.users.size >= lobby.maxplayers%>
+                <p>Lobby full</p>
+              <% else %>
+                <%= button_to 'Join', join_path(:lobby => lobby), method: :post, class: '_btn_important' %>
+              <% end %>
             <% end %>
-            <p class="_p_lobbyfill">3/5 in Lobby</p>
+            <p class="_p_lobbyfill"> 
+              <p><%= lobby.users.size %>/<%= lobby.maxplayers %> joined</p>
+            </p>
         </div>
+        
     </div>
   <% end %>
 </main>

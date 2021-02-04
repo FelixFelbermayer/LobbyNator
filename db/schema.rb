@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_170706) do
     t.bigint "user_id"
     t.date "date"
     t.string "time"
+    t.integer "maxplayers"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_lobbies_on_user_id"

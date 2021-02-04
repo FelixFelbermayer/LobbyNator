@@ -1,5 +1,5 @@
 ._p_important{
-    color: pink;
+    color: orange;
     font-family: 'Roboto';
     font-size: 1.4rem;
 }
@@ -7,16 +7,32 @@
     font-family: 'Roboto';
     font-size: 1rem;
     min-width: 70px;
-    color: $headergrey;
+    color: white;
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+._p_text{
+    font-family: 'Roboto';
+    font-size: 1rem;
+    min-width: 70px;
+    color: white;
 }
 
+.maxPlayer{
+    font-family: Roboto;
+    color: white;
+    font-size: 1.5rem;
+}
 ._p_lobbyfill{
     color: black;
 }
 
 ._h2_level2{
     font-family: 'Roboto';
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: white;
 }
 ._h2_level1{
     font-family: 'Roboto';

@@ -60,7 +60,7 @@ class LobbyController < ApplicationController
     def join
       @lobby = Lobby.find(join_params)
       @lobby.users.push(current_user)
-      redirect_to root_path, notice: "You have successfully joined the lobby!"    
+      redirect_to @lobby, notice: "You have successfully joined the lobby!"    
     end
 
     def leave

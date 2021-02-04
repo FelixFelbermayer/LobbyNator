@@ -1,42 +1,80 @@
-<h1><%= @lobby.name %></h1>
-<p><%= @lobby.description %></p>
-
-<p><%= @lobby.users.size %>/
-<%= @lobby.maxplayers%> players joined this lobby</p>
-
-<h2>Members:</h2>
-<% if user_signed_in? %>
-
-  <% @lobby.users.each do |lobby| %>
-    <%= lobby.username %><br>
-  <%end%>
-
-<%= form_with model: @chatmessage, url: "/chatmessage" do |form| %>
-
-  <%= form.hidden_field :lobby_id, value: @lobby.id%>
-
-  <div class="field">
-    <%= form.label :Chatmessage %>
-    <%= form.text_area :text, size: "70x5" %>
-  </div>
-  
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<header>
+    <h1 class="headerHeading"><a href="/">Lobbynator</a></h1>
+    <h1 class="headerHeadingName after_tablet"><%= @lobby.name %> / <%= @lobby.date.strftime("%d.%m") %> ,<%= @lobby.time %></h1>
+    <nav>
+        <div class="burger">
+            <div class="burgerelement line1"></div>
+            <div class="burgerelement line2"></div>
+            <div class="burgerelement line3"></div>
+        </div>
+    </nav>
+</header>
+<ul class="nav-links">
+    <li><%= link_to "Profile",  user_registration_path+"/#{current_user.id}" ,method: :get %></li>
+    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+    <li><%=  link_to 'New Lobby', "#{new_lobby_path}", class: "till_desktop", method: :get %></li>
+    <li class="till_desktop openfilters">Filters</li>
+</ul>
+<% if notice.present? %>
+<div><p id="notice"><%= notice %></p></div>
 <% end %>
-
-
-<% @lobby.chatmessages.each do |textObject| %>
-    <%= textObject.text %>
-    <% textMessage = textObject.created_at.strftime("%H:%M") %>
-    <%= textMessage %><br>
-  <%end%>
-
-<% end %> 
-
-
-<%= button_to 'Leave lobby', leave_path(:lobby => @lobby), method: :post, class: '_btn_header' %>
-
-
-
+<section class="_section_lobby">
+            <div class="_div_lobbymeta">
+                <h2><%= @lobby.name %></h2>
+                <div class="_div_subsection active">
+                    <h3 class="_h3_subheading">Description</h3>
+                    <div class="_div_subsection_content">
+                        <p class="_p_description">
+                           <%= @lobby.description %><br><br>
+                           <p><%= @lobby.users.size %>/<%= @lobby.maxplayers%> players joined this lobby</p>
+                        </p>
+                    </div>
+                </div>
+                <div class="_div_subsection">
+                    <h3 class="_h3_subheading">Tags</h3>
+                    <div class="_div_subsection_content _div_flextags">
+                      <% @lobby.filters.each do |cat| %>
+                        <p class="_p_lobbytag"><%= cat.name%></p>
+                      <% end %>
+                    </div>
+                </div>
+                <div class="_div_subsection">
+                    <h3 class="_h3_subheading">Members</h3>
+                    <div class="_div_subsection_content _div_flextags">
+                        <% @lobby.users.each do |member| %>
+                          <p class="_p_lobbytag"><%= member.username%></p>
+                        <% end %>
+                    </div>
+                </div>
+                <%= button_to 'Leave lobby', leave_path(:lobby => @lobby), method: :post, class: '_btn_big after_tablet' %>
+            </div>
+            <div class="_div_chat">
+                <h3>Chat</h3>
+                <ul class="_ul_chatmessages">
+                  <% @lobby.chatmessages.each do |textObject| %>
+                    <% if textObject.user_id == current_user.id %>
+                    
+                      <li class="_li_message _li_message_self">
+                          <p class="_p_message_text"><%= textObject.text %></p>
+                          <p class="_p_message_author"><%= textObject.user.username %> - <%=textObject.created_at.strftime("%H:%M") %></p>
+                      </li>
+                    <%else%>
+                      <li class="_li_message">
+                          <p class="_p_message_text"><%= textObject.text %></p>
+                          <p class="_p_message_author"><%= textObject.user.username %> - <%=textObject.created_at.strftime("%H:%M") %></p>
+                      </li>
+                    <%end%>
+                  <%end%>
+                </ul>
+                <%= form_with model: @chatmessage, url: "/chatmessage" do |form| %>
+                  <%= form.hidden_field :lobby_id, value: @lobby.id%>
+                    <%= form.text_field :text %>                 
+                    <button type="submit" class="_btn_imagebtn">
+                        <%= image_tag("send.svg", :alt => "send message", class: 'img_submitimg') %>
+                    </button>
+                <% end %>
+            </div>
+            <%= button_to 'Leave lobby', leave_path(:lobby => @lobby), method: :post, class: '_btn_big till_desktop' %>
+        </section>
+<%= javascript_pack_tag 'header', media: 'all', 'data-turbolinks-track': 'reload' %> 
+<%= javascript_pack_tag 'lobby', media: 'all', 'data-turbolinks-track': 'reload' %> 

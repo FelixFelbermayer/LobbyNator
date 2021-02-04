@@ -9,6 +9,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 10px;
+    &:hover{
+        box-shadow: 5px 5px 3px black;
+    }
     
     @include breakpoint(tablet){
         width: 15vw;
@@ -24,7 +28,7 @@
         object-position: top;
     }
 
-    background-color: $filtergrey;
+    background-color: rgb(98, 98, 98);
     
     & > div{
         margin-top: 10px;
@@ -34,10 +38,15 @@
         flex-direction: column;
         gap: 5px;
 
+        & > ._p_text{
+            border-bottom: 1px solid white;
+            padding-bottom: 5px;
+        }
         div{
             display: flex;
             justify-content: flex-start;
             flex-wrap: wrap;
+            gap: 5px;
         }
         
     }
@@ -46,21 +55,10 @@
         align-items: flex-end;
         justify-content: space-evenly;
         margin: 0;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 }
 
 ._div_gridcard_image{
     overflow: hidden;
 }
-/* .filterContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: 1vh;
-}
-.upperInfo{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-} */

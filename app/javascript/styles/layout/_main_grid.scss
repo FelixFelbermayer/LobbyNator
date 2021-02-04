@@ -3,8 +3,11 @@ main._main_grid{
     width: 100vw;
     flex-wrap: wrap;
     gap: 10px;
+    padding-top: 10px;
     justify-content: space-evenly;
-    margin-top: 10px;
+    @include breakpoint(desktop1){
+        justify-content: flex-start; 
+    }
 }
 .grid::after {
     content: "";
@@ -13,6 +16,11 @@ main._main_grid{
 #notice{
     text-align: center;
     font-family: 'Roboto';
-    color: orange;
+    color: white;
+    font-size: 2rem;
     margin: 2vh 0px 2vh 0px;
+    p{
+        display: inline-block;
+        margin: 0 auto;
+    }
 }

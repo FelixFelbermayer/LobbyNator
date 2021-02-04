@@ -2,8 +2,10 @@
 header{
     height: 8vh;
     // background-color: $headergrey;
-    border-bottom: 3px solid orange;
+    /* border-bottom: 3px solid orange; */
+    /* box-shadow: 0px 3px 10px orange; */
     display: flex;
+    background-color: white;
     // box-shadow: 1px 2px 15px black;
     justify-content: space-between;
     align-items: center;
@@ -15,14 +17,14 @@ header{
 }
 .headerHeading{
     a{
-        color: $red;
+        color: orange;
         text-decoration: none;
     }
     font-size: 2.5rem;
-    color: $red;
+    color: orange;
     font-family: Snes;
     margin-left: 20px;
-    text-shadow: 1px 1px 2.5px black;
+    /* text-shadow: 1px 1px 2.5px black; */
     letter-spacing: 1.5px;
     text-align: center;
     @include breakpoint(tablet){
@@ -44,7 +46,7 @@ header{
 .nav-links{
     position: fixed;
     z-index: 20;
-    height: 20vh;
+    height: auto;
     width: 50%;
     background-color: white;
     box-shadow: -2px 6px 10px black;
@@ -58,14 +60,17 @@ header{
     li{
         margin-top: 5vh;
         text-align: center;
+        font-family: Roboto;
+        font-size: 1.3rem;
         a{
-            font-family: Roboto;
-            text-decoration: none;
             color: black;
-            font-size: 1.3rem;
+            text-decoration: none;
+            &:hover{
+                color: orange;
+            }
         }
-        a:hover{
-            color: green;
+        &:last-child{
+            margin-bottom: 5vh;
         }
     }
 }
@@ -81,4 +86,9 @@ header{
 }
 .toggle .line3{
     transform: rotate(45deg) translate(-7px,-6px);
+}
+.headerHeadingName{
+    font-family: Roboto;
+    font-size: 2.5rem;
+    color: black;
 }

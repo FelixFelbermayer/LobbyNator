@@ -8,6 +8,9 @@
     height: 2.5rem;
     margin: 0;
     padding: 0;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 ._btn_header{
@@ -19,16 +22,32 @@
     text-decoration: none;
 
     &.active{
-        color: purple;
+        color: orange;
     }
     &:hover{
-        color: purple;
-        text-decoration: underline;
+        color: orange;
+        cursor: pointer;
+    }
+}
+._btn_filter{
+    color: black;
+    background: none;
+    border: none;
+    font-family: 'Roboto';
+    font-size: 2rem;
+    text-decoration: none;
+
+    &.active{
+        color: white;
+    }
+    &:hover{
+        color: white;
+        cursor: pointer;
     }
 }
 
 ._btn_big{
-    background-color: $green;
+    background-color: orange;
     color: white;
     border: none;
     font-size: 1.5rem;
@@ -44,14 +63,16 @@
     }
     
     &:hover{
-        background-color: $greenhover;
+        color: orange;
+        background-color: white;
+        border: 1px solid black;
+        cursor: pointer;
     }
 }
 ._btn_medium{
-    background-color: $green;
-    border: 1px solid $green;
+    background-color: orange;
+    border: 1px solid orange;
     color: white;
-    border: none;
     font-size: 1rem;
     border-radius: 0.8rem;
     padding: 5px 10px;
@@ -65,8 +86,9 @@
     }
     
     &:hover{
-        color: $green;
+        color: orange;
         background-color: white;
         border: 1px solid black;
+        cursor: pointer;
     }
 }

@@ -8,23 +8,19 @@ class LobbyController < ApplicationController
     redirect_to root_path
   end
     def index
-
       if user_signed_in?
         singular = current_user.filters.select { |f| f.filtercategory.singular}
         multiple = current_user.filters.select { |f| f.filtercategory.singular == false }
-
-        puts "a"
-        puts singular.size
-        puts multiple.size
-        @lobbies = Lobby.all.select { 
-          |lobby| singular.any? { |g| lobby.filters.include?(g) }
-        }.select {
+        if singular.size == 0
+          @lobbies = Lobby.all
+        else
+          @lobbies = Lobby.all.select { 
+            |lobby| singular.any? { |g| lobby.filters.include?(g) }
+          }
+        end
+        @lobbies= @lobbies.select {
           |lobby| multiple.all? { |f| lobby.filters.include?(f) }
         }
-        # @lobbies = Lobby.all.select { 
-        #  |lobby| multiple.all? { |f| lobby.filters.include?(f)} 
-        # } 
-        #@lobbies = Lobby.all
         @categories = Filtercategory.all
       else
         redirect_to new_user_session_path
@@ -57,13 +53,19 @@ class LobbyController < ApplicationController
     def join
       @lobby = Lobby.find(join_params)
       @lobby.users.push(current_user)
-      redirect_to root_path, notice: "Lobby was successfully joined."    
+      redirect_to root_path, notice: "You have successfully joined the lobby!"    
     end
 
     def leave
       @lobby = Lobby.find(join_params)
       @lobby.users.delete(current_user)
-      redirect_to root_path, notice: "Lobby was successfully destroyed."
+      if @lobby.users.size == 0
+        @lobby.destroy
+      elsif current_user == @lobby.user
+          @lobby.user = @lobby.users.first
+      end
+      @lobby.save
+      redirect_to root_path, notice: "You have successfully exited the lobby!"
     end
 
     def create
@@ -74,13 +76,22 @@ class LobbyController < ApplicationController
       @lobby.users.push(current_user)
       @lobby.filters << @filter
 
+      puts "hoo"
+      puts @filter.select{|filter| filter.filtercategory.singular}.size
+      puts "hoo"
+
+      if @filter.select{|filter| filter.filtercategory.singular}.size < 1
+        redirect_to new_lobby_path, notice: "You have to select at least one game!"
+        return
+      end
+
       respond_to do |format|
         if @lobby.save
-          format.html { redirect_to @lobby, notice: "Cat was successfully created." }
+          format.html { redirect_to @lobby, notice: "You have successfully created the lobby!" }
           format.json { render :show, status: :created, location: @lobby }
         else
-          #format.html { render :edit, status: :unprocessable_entity }
-          #format.json { render json: @lobby.errors, status: :unprocessable_entity }
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @lobby.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -93,7 +104,7 @@ class LobbyController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def lobby_params
-      params.require(:lobby).permit(:name, :description, :user, :date, :time, :filter)
+      params.require(:lobby).permit(:name, :description, :user, :date, :time, :filter, :maxplayers)
     end
 
     def join_params

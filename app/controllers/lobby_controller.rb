@@ -1,4 +1,5 @@
 class LobbyController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_lobby, only: %i[ show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found

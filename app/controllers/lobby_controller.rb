@@ -24,6 +24,8 @@ class LobbyController < ApplicationController
         @categories = Filtercategory.all
         @games = Filter.all.select{
           |fil| @lobbies.any? {|g| g.filters.include?(fil)}
+        }.select {
+          |fil| fil.filtercategory.singular == true
         }
         puts "asdf"
         puts @games

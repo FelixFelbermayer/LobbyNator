@@ -1,9 +1,8 @@
 cat = Filtercategory.create(name: "Game", singular: true)
-
 strikt = cat.filters.create(name: "Counter Strike")
 lol = cat.filters.create(name: "League of Legends")
-cat.filters.create(name: "Among Us")
-cat.filters.create(name: "Need for Speed")
+au = cat.filters.create(name: "Among Us")
+nfs = cat.filters.create(name: "Need for Speed")
 
 cat2 = Filtercategory.create(name: "Voicechat")
 
@@ -24,7 +23,7 @@ cat4.filters.create(name: "E-Sports Champion")
 feci = User.create(username: "Feci", email: "feci@lobby.com", password: "test123")
 stef = User.create(username: "Stef", email: "stef@lobby.com", password: "test123")
 
-feci.filters.push(strikt)
+feci.filters.push(Filter.find(strikt.id))
 stef.filters.push(lol)
 
 l = Lobby.create(name: "Lobby 1", description: "Feci carrien", user: feci, date: Time.now, maxplayers: 4)
@@ -46,3 +45,13 @@ l3.users.push(feci)
 l.save()
 l2.save()
 l3.save()
+
+
+strikt.filter_image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'CSGO.jpg')), filename: 'CSGO.jpg')
+strikt.save
+lol.filter_image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'lol.jpg')), filename: 'lol.jpg')
+lol.save
+au.filter_image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'among.jpg')), filename: 'among.jpg')
+au.save
+nfs.filter_image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'nfs.jpg')), filename: 'nfs.jpg')
+nfs.save

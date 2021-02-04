@@ -101,9 +101,16 @@ document.addEventListener('turbolinks:load', (event) => {
             
             let i = document.createElement("input")
             i.type = "text"
+            i.disabled = true
             i.name = "filter[]"
             i.value = f
             formcont.appendChild(i)
+
+            let j = document.createElement("input")
+            j.type = "hidden"
+            j.name = "filter[]"
+            j.value = f
+            formcont.appendChild(j)
             
         })
     }

@@ -1,5 +1,5 @@
 <header>
-    <h1 class="headerHeading">Lobbynator</h1>
+    <h1 class="headerHeading"><a href="/">Lobbynator</a></h1>
     <div class="_div_heading_middle">
         <button class="_btn_header till_desktop openfilters">Filters</button>
         <% @categories.each do |cat| %>
@@ -18,7 +18,7 @@
     </nav>
 </header>
 <ul class="nav-links">
-    <li><%= link_to "Profile",  "users/#{current_user.id}" ,method: :get %></li>
+    <li><%= link_to "Profile",  user_registration_path+"/#{current_user.id}" ,method: :get %></li>
     <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 </ul>
 <section class="_section_pagemeta disabled">
@@ -45,14 +45,16 @@
         </div>
     </div>
     <div class="_div_flexaround">
-        <button class="_btn_header" id="closefilters">Close</button>
+        <button class="_btn_filter" id="closefilters">Close</button>
     </div>
 </section>
 <div><p id="notice"><%= notice %></p></div>
-<h1>Create new Lobby</h1>
-
+<h1 class="_h2_level1 _text_center">Create new Lobby</h1>
+<main>
+    <div class="createLobbyContainer">
 <%= render 'form', lobby: @lobby %>
-
+    </div>
+</main>
 
 <%= javascript_pack_tag 'filter', media: 'all', 'data-turbolinks-track': 'reload' %> 
 <%= javascript_pack_tag 'header', media: 'all', 'data-turbolinks-track': 'reload' %> 

@@ -11,22 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="nameContainer">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
   
-  <div class="field">
+  <div class="descriptionContainer">
     <%= form.label :description %>
     <%= form.text_area :description, size: "70x5" %>
   </div>
-  <div class="field">
-    <%= form.date_field :date %>
-    <%= form.time_field :time %>
-  </div>
 
   <div class="maxPlayerContainer">
-      <label for="lobby[maxplayers]">Lobbysize:</label><br>
+      <label for="lobby[maxplayers]">Lobbysize</label><br>
       <div class="select-wrapper">
           <select name="lobby[maxplayers]" id="maxplayers">
               <option value="2">2</option>
@@ -41,11 +37,16 @@
           </select>
       </div>
   </div>
+  <div class="dateNew">
+   <label for="lobby[time]">Date and Time</label><br>
+    <%= form.date_field :date %>
+    <%= form.time_field :time %>
+  </div>
 
   <div id="selectedform">
   </div>
   
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "_btn_medium" %>
   </div>
 <% end %>

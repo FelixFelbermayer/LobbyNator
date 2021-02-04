@@ -12,18 +12,18 @@
     <header>
         <h1 class="headerHeading">Lobbynator</h1>
         <div class="_div_heading_middle">
-            <button class="_btn_header till_desktop">Filters</button>
+            <button class="_btn_header till_desktop openfilters">Filters</button>
             
-            <button class="_btn_header active after_tablet">
+            <button class="_btn_header after_tablet openfilters _btn_cat">
                 Games
             </button>
-            <button class="_btn_header after_tablet">
+            <button class="_btn_header after_tablet openfilters _btn_cat">
                 Language
             </button>
-            <button class="_btn_header after_tablet">
+            <button class="_btn_header after_tablet openfilters _btn_cat">
                 Voicechat
             </button>
-            <button class="_btn_header after_tablet">
+            <button class="_btn_header after_tablet openfilters _btn_cat">
                 Skilllevel
             </button>
         </div>
@@ -40,44 +40,55 @@
         <li><a href="#">Log out</a></li>
     </ul>
     
-    <section class="_section_pagemeta">
+    <section class="_section_pagemeta disabled">
         <div>
             <div class="_div_flexwrap">
-                <button class="_btn_header active till_desktop">
+                <button class="_btn_header till_desktop _btn_cat2">
                     Games
                 </button>
-                <button class="_btn_header till_desktop">
+                <button class="_btn_header till_desktop _btn_cat2">
                     Language
                 </button>
-                <button class="_btn_header till_desktop">
+                <button class="_btn_header till_desktop _btn_cat2">
                     Voicechat
                 </button>
-                <button class="_btn_header till_desktop">
+                <button class="_btn_header till_desktop _btn_cat2">
                     Skilllevel
                 </button>
             </div>
 
-            <input type="text" placeholder="Filter Tags">  
-            <div class="_div_filterlist">
-                <p class="_p_info">League of Legends</p>
-                <p class="_p_info">League of Legends</p>
-                <p class="_p_info">League of Legends</p>
-                <p class="_p_info">League of Legends</p>
-                <p class="_p_info">League of Legends</p>
-                <p class="_p_info">League of Legends</p>
-                <p class="_p_info">League of Legends</p>
-                <p class="_p_info">League of Legends</p>
-                <p class="_p_info">League of Legends</p>
+            <input type="text" placeholder="Filter Tags" id="filtersearch">  
+            <div class="_div_filterlist _div_filtercategory disabled">
+                <p class="_p_info _p_filterelement">League of Legends</p>
+                <p class="_p_info _p_filterelement">Counter Strike</p>
+                <p class="_p_info _p_filterelement">Among Us</p>
+                <p class="_p_info _p_filterelement">EOS Online</p>
+                <p class="_p_info _p_filterelement">Teamfight Tactics</p>
             </div>
-            <div class="_div_filterlist">
-                <p class="_p_info selected">League of Legends</p>
-                <p class="_p_info selected">League of Legends</p>
-                <p class="_p_info selected">League of Legends</p>
+            <div class="_div_filterlist _div_filtercategory disabled">
+                <p class="_p_info _p_filterelement">English</p>
+                <p class="_p_info _p_filterelement">Deutsch</p>
+                <p class="_p_info _p_filterelement">German</p>
+                <p class="_p_info _p_filterelement">Estereichisch</p>
+            </div>
+            <div class="_div_filterlist _div_filtercategory disabled">
+                <p class="_p_info _p_filterelement">Discord</p>
+                <p class="_p_info _p_filterelement">Teamspeak</p>
+                <p class="_p_info _p_filterelement">Teams</p>
+                <p class="_p_info _p_filterelement">Skype</p>
+            </div>
+            <div class="_div_filterlist _div_filtercategory disabled">
+                <p class="_p_info _p_filterelement">Intermediate</p>
+                <p class="_p_info _p_filterelement">Expert</p>
+                <p class="_p_info _p_filterelement">Beginner</p>
+                <p class="_p_info _p_filterelement">Fortnitekid</p>
+            </div>
+            <div class="_div_filterlist" id="selectedFilters">
             </div>
         </div>
         <div class="_div_flexaround">
-            <button class="_btn_header">Close</button>
-            <button class="_btn_header">Apply</button>
+            <button class="_btn_header" id="closefilters">Close</button>
+            <button class="_btn_header" id="applyfilters">Apply</button>
         </div>
     </section>
 

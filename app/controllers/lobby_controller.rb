@@ -1,4 +1,5 @@
 class LobbyController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_lobby, only: %i[ show edit update destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :handle_record_not_found
@@ -21,6 +22,12 @@ class LobbyController < ApplicationController
           |lobby| multiple.all? { |f| lobby.filters.include?(f) }
         }
         @categories = Filtercategory.all
+        @games = Filter.all.select{
+          |fil| @lobbies.any? {|g| g.filters.include?(fil)}
+        }
+        puts "asdf"
+        puts @games
+        puts "asdf"
       else
         redirect_to new_user_session_path
       end

@@ -119,50 +119,161 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"scripts/filter_script.js":[function(require,module,exports) {
 document.addEventListener('DOMContentLoaded', function (event) {
-  var filtercategories = document.querySelectorAll('._li_filtercategory');
-  var filterlists = document.querySelectorAll('._ul_filters');
-  var singlefilters = document.querySelectorAll('._li_singlefilter');
-  var search = document.getElementById("filtersearch");
+  // var filtercategories = document.querySelectorAll('._li_filtercategory')
+  // var filterlists = document.querySelectorAll('._ul_filters')
+  // var singlefilters = document.querySelectorAll('._li_singlefilter')
+  // var search = document.getElementById("filtersearch")
+  // var toggleDisplays = function(activeIndex){
+  //     filtercategories.forEach((val, index) => {
+  //         if(index == activeIndex){
+  //             val.classList.add('active')
+  //         }else{
+  //             val.classList.remove('active');
+  //         }
+  //     })
+  //     filterlists.forEach((val, index) => {
+  //         if(index == activeIndex){
+  //             val.classList.remove('disabled')
+  //         }else{
+  //             val.classList.add('disabled')
+  //         }
+  //     })
+  // }
+  // var toggleClass = function(element,classname) {
+  //     element.classList.toggle(classname)
+  // }
+  // var filterInputs = function(matchText){
+  //     Array.from(singlefilters)
+  //         .forEach(s => s.innerText.toLowerCase().includes(matchText.toLowerCase()) ? s.classList.remove('disabled') : s.classList.add('disabled') )        
+  // }
+  // filtercategories.forEach((val, index) => {
+  //     val.addEventListener('click', function(){
+  //         toggleDisplays(index)
+  //     })
+  // })
+  // singlefilters.forEach((val) => {
+  //     val.addEventListener('click', function(){
+  //         toggleClass(val, 'active')
+  //     })
+  // })
+  // search.addEventListener('keyup', function(){
+  //     filterInputs(search.value)
+  // })
+  var filtersection = document.querySelector("._section_pagemeta");
+  var filterbutton = document.querySelectorAll(".openfilters");
+  var closebutton = document.getElementById("closefilters");
+  var applybutton = document.getElementById("applyfilters");
+  var filtercategories = document.querySelectorAll("._div_filtercategory");
+  var catbuttons1 = document.querySelectorAll("._btn_cat");
+  var catbuttons2 = document.querySelectorAll("._btn_cat2");
 
-  var toggleDisplays = function toggleDisplays(activeIndex) {
-    filtercategories.forEach(function (val, index) {
-      if (index == activeIndex) {
-        val.classList.add('active');
-      } else {
-        val.classList.remove('active');
+  var setClassInArray = function setClassInArray(arr, ind, classname) {
+    arr.forEach(function (element, index) {
+      if (index != ind && element.classList.contains(classname)) {
+        element.classList.remove(classname);
+      } else if (ind == index) {
+        element.classList.add(classname);
       }
     });
-    filterlists.forEach(function (val, index) {
-      if (index == activeIndex) {
-        val.classList.remove('disabled');
-      } else {
-        val.classList.add('disabled');
+  };
+
+  var setSections = function setSections(actindex) {
+    filtercategories.forEach(function (element, index) {
+      if (index != actindex && !element.classList.contains("disabled")) {
+        element.classList.add("disabled");
+      } else if (index == actindex) {
+        element.classList.remove("disabled");
       }
     });
   };
 
-  var toggleClass = function toggleClass(element, classname) {
-    element.classList.toggle(classname);
+  var setMenu = function setMenu(actindex) {
+    setClassInArray(catbuttons1, actindex, "active");
+    setClassInArray(catbuttons2, actindex, "active");
   };
 
-  var filterInputs = function filterInputs(matchText) {
-    Array.from(singlefilters).forEach(function (s) {
-      return s.innerText.toLowerCase().includes(matchText.toLowerCase()) ? s.classList.remove('disabled') : s.classList.add('disabled');
+  catbuttons1.forEach(function (element, index) {
+    element.addEventListener('click', function () {
+      setSections(index);
+      setMenu(index);
+    });
+  });
+  catbuttons2.forEach(function (element, index) {
+    element.addEventListener('click', function () {
+      setSections(index);
+      setMenu(index);
+    });
+  });
+  filterbutton.forEach(function (e) {
+    e.addEventListener('click', function () {
+      if (filtersection.classList.contains("disabled")) {
+        filtersection.classList.remove("disabled");
+      }
+    });
+  });
+  closebutton.addEventListener('click', function () {
+    if (!filtersection.classList.contains("disabled")) {
+      filtersection.classList.add("disabled");
+    }
+  });
+  applybutton.addEventListener('click', function () {
+    alert("Whats in the box");
+  });
+  var filtersearch = document.getElementById("filtersearch");
+  var concfilters = document.querySelectorAll("._p_filterelement");
+  var selectedfilters = Array.from(document.querySelectorAll(".selected")).map(function (e) {
+    return e.innerText;
+  });
+  var selcont = document.getElementById("selectedFilters");
+
+  var filterClick = function filterClick(element) {
+    if (element.classList.contains("selected")) {
+      selectedfilters = selectedfilters.filter(function (f) {
+        return f != element.innerText;
+      });
+      Array.from(concfilters).filter(function (f) {
+        return f.innerText == element.innerText;
+      }).forEach(function (e) {
+        e.classList.remove("selected");
+      });
+    } else {
+      selectedfilters.push(element.innerText);
+      element.classList.add("selected");
+    }
+
+    console.log(selectedfilters);
+    updateSelectedUI();
+  };
+
+  var updateSelectedUI = function updateSelectedUI() {
+    selcont.innerHTML = "";
+    selectedfilters.forEach(function (f) {
+      var p = document.createElement("p");
+      p.classList.add("_p_info");
+      p.classList.add("_p_filterelement");
+      p.classList.add("selected");
+      p.classList.add("immutable");
+      p.textContent = f;
+      p.addEventListener('click', function () {
+        filterClick(p);
+      });
+      selcont.appendChild(p);
     });
   };
 
-  filtercategories.forEach(function (val, index) {
-    val.addEventListener('click', function () {
-      toggleDisplays(index);
+  concfilters.forEach(function (element) {
+    element.addEventListener('click', function () {
+      filterClick(element);
     });
   });
-  singlefilters.forEach(function (val) {
-    val.addEventListener('click', function () {
-      toggleClass(val, 'active');
+  filtersearch.addEventListener('keyup', function () {
+    Array.from(concfilters).forEach(function (element) {
+      if (element.classList.contains("immutable") == false && element.innerText.toLowerCase().includes(filtersearch.value.toLowerCase()) == false) {
+        element.classList.add("hidden");
+      } else {
+        element.classList.remove("hidden");
+      }
     });
-  });
-  search.addEventListener('keyup', function () {
-    filterInputs(search.value);
   });
 });
 },{}],"../../../../../usr/local/lib/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -193,7 +304,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39105" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35289" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

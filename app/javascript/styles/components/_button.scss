@@ -16,12 +16,14 @@
     border: none;
     font-family: 'Roboto';
     font-size: 2rem;
+    text-decoration: none;
 
     &.active{
         color: purple;
     }
     &:hover{
         color: purple;
+        text-decoration: underline;
     }
 }
 

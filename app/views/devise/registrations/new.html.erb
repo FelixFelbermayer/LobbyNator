@@ -1,6 +1,6 @@
-<h2>Sign up</h2>
+<h2 class="_h2_level1 _text_center">Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, :html => {:class => "_form_userform"}, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -8,7 +8,7 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class=”field”>
+  <div class="field">
     <%= f.label :username %><br />
     <%= f.text_field :username, autofocus: true %>
   </div>
@@ -27,7 +27,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "_btn_header" %>
   </div>
 <% end %>
 

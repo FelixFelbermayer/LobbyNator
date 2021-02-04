@@ -54,6 +54,7 @@ class LobbyController < ApplicationController
     end
     
     def edit
+      @categories = Filtercategory.all()
     end
 
     def join
@@ -75,6 +76,19 @@ class LobbyController < ApplicationController
       redirect_to root_path, notice: "You have successfully exited the lobby!"
     end
 
+    # PATCH/PUT /cats/1 or /cats/1.json
+    def update
+      respond_to do |format|
+        if @lobby.update(lobby_params)
+          format.html { redirect_to @lobby, notice: "Lobby was successfully updated." }
+          format.json { render :show, status: :ok, location: @lobby }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @lobby.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
     def create
       @filter = Filter.where(name: params["filter"])
       @lobby = Lobby.new(lobby_params)
@@ -83,9 +97,7 @@ class LobbyController < ApplicationController
       @lobby.users.push(current_user)
       @lobby.filters << @filter
 
-      puts "hoo"
       puts @filter.select{|filter| filter.filtercategory.singular}.size
-      puts "hoo"
 
       if @filter.select{|filter| filter.filtercategory.singular}.size < 1
         redirect_to new_lobby_path, notice: "You have to select at least one game!"

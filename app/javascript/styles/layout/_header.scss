@@ -14,6 +14,10 @@ header{
     z-index: 1;
 }
 .headerHeading{
+    a{
+        color: $red;
+        text-decoration: none;
+    }
     font-size: 2.5rem;
     color: $red;
     font-family: Snes;

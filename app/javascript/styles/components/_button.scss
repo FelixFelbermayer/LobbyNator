@@ -26,3 +26,47 @@
         text-decoration: underline;
     }
 }
+
+._btn_big{
+    background-color: $green;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 0.8rem;
+    padding: 5px 10px;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    max-width: 250px;
+    width: fit-content;
+    @include breakpoint(tablet){
+        font-size: 1.8rem;
+        padding: 7px 15px;
+    }
+    
+    &:hover{
+        background-color: $greenhover;
+    }
+}
+._btn_medium{
+    background-color: $green;
+    border: 1px solid $green;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    border-radius: 0.8rem;
+    padding: 5px 10px;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    max-width: 250px;
+    width: fit-content;
+    @include breakpoint(tablet){
+        font-size: 1.3rem;
+        padding: 4px 10px;
+    }
+    
+    &:hover{
+        color: $green;
+        background-color: white;
+        border: 1px solid black;
+    }
+}

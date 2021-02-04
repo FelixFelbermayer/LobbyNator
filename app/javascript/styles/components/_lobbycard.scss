@@ -43,7 +43,7 @@
     div._div_endFlex{
         flex-direction: row;
         align-items: flex-end;
-        justify-content: space-between;
+        justify-content: space-evenly;
         margin: 0;
         margin-bottom: 10px;
     }
@@ -52,3 +52,14 @@
 ._div_gridcard_image{
     overflow: hidden;
 }
+/* .filterContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 1vh;
+}
+.upperInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */

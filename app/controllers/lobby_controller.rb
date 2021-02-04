@@ -60,6 +60,7 @@ class LobbyController < ApplicationController
       @lobby.users.delete(current_user)
       if @lobby.users.size == 0
         @lobby.destroy
+        
       elsif current_user == @lobby.user
           @lobby.user = @lobby.users.first
       end

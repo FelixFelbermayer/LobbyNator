@@ -1,4 +1,4 @@
-cat = Filtercategory.create(name: "Game")
+cat = Filtercategory.create(name: "Game", singular: true)
 
 strikt = cat.filters.create(name: "Counter Strike")
 lol = cat.filters.create(name: "League of Legends")

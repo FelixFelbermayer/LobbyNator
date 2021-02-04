@@ -9,7 +9,21 @@ class LobbyController < ApplicationController
     def index
 
       if user_signed_in?
-        @lobbies = Lobby.all.select { |lobby| current_user.filters.all? { |f| lobby.filters.include?(f)}}
+        singular = current_user.filters.select { |f| f.filtercategory.singular}
+        multiple = current_user.filters.select { |f| f.filtercategory.singular == false }
+
+        puts "a"
+        puts singular.size
+        puts multiple.size
+        @lobbies = Lobby.all.select { 
+          |lobby| singular.any? { |g| lobby.filters.include?(g) }
+        }.select {
+          |lobby| multiple.all? { |f| lobby.filters.include?(f) }
+        }
+        # @lobbies = Lobby.all.select { 
+        #  |lobby| multiple.all? { |f| lobby.filters.include?(f)} 
+        # } 
+        #@lobbies = Lobby.all
         @categories = Filtercategory.all
       else
         redirect_to new_user_session_path

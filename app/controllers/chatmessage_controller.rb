@@ -1,8 +1,8 @@
 class ChatmessageController < ApplicationController
-    before_action :set_lobby
+  before_action :authenticate_user!  
+  before_action :set_lobby
 
     def create
-
         @chatmessage = Chatmessage.new
         @chatmessage.text = chatmessage_params
         @chatmessage.user_id = current_user.id

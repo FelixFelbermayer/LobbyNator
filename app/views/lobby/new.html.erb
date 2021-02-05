@@ -1,14 +1,12 @@
 <header>
     <h1 class="headerHeading"><a href="/">Lobbynator</a></h1>
     <div class="_div_heading_middle">
-        <button class="_btn_header till_desktop openfilters">Filters</button>
         <% @categories.each do |cat| %>
           <button class="_btn_header after_tablet openfilters _btn_cat">
               <%= cat.name %>
           </button>
         <% end %>
     </div>
-    <%=  button_to 'New Lobby', "#{new_lobby_path}", class: "_btn_header", method: :get %>
     <nav>
         <div class="burger">
             <div class="burgerelement line1"></div>
@@ -20,6 +18,8 @@
 <ul class="nav-links">
     <li><%= link_to "Profile",  user_registration_path+"/#{current_user.id}" ,method: :get %></li>
     <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+    <li><%=  link_to 'New Lobby', "#{new_lobby_path}", class: "till_desktop", method: :get %></li>
+    <li class="till_desktop openfilters">Filters</li>
 </ul>
 <section class="_section_pagemeta disabled">
     <div>

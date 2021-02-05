@@ -24,10 +24,18 @@ class LobbyController < ApplicationController
         @categories = Filtercategory.all
         @games = Filter.all.select{
           |fil| @lobbies.any? {|g| g.filters.include?(fil)}
+        }.select{
+          |gem| gem.filtercategory.singular == true
         }
-        puts "asdf"
-        puts @games
-        puts "asdf"
+
+        puts "oha"
+        if(singular.size > 0)
+          puts @games.size
+          @games = @games.select {
+            |gem| singular.include?(gem)
+          }  
+        end
+        puts "after"
       else
         redirect_to new_user_session_path
       end

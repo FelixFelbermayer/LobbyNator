@@ -1,6 +1,6 @@
+Chatmessage.delete_all
 Lobby.delete_all
 Filter.delete_all
-Chatmessage.delete_all
 Filtercategory.delete_all
 User.delete_all
 

@@ -2,7 +2,6 @@ main._main_grid{
     display: flex;
     width: 100vw;
     flex-wrap: wrap;
-    gap: 10px;
     padding-top: 10px;
     justify-content: space-evenly;
     @include breakpoint(desktop1){

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('turbolinks:load', (event) => {
     let subheadings = document.querySelectorAll('._h3_subheading')
     let subsections = document.querySelectorAll('._div_subsection')
     let accordion = function(activeInd){
@@ -17,4 +17,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
             accordion(index)
         })
     })
+
 })

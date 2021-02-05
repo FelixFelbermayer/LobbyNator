@@ -57,19 +57,20 @@ document.addEventListener('turbolinks:load', (event) => {
         })
     })
     
-    closebutton.addEventListener('click', function(){
-        if (!filtersection.classList.contains("disabled")){
-            filtersection.classList.add("disabled")
-        }
-    })
-
+    if(closebutton){
+        closebutton.addEventListener('click', function(){
+            if (!filtersection.classList.contains("disabled")){
+                filtersection.classList.add("disabled")
+            }
+        })
+    }
+        
     let filtersearch = document.getElementById("filtersearch")
     let concfilters = document.querySelectorAll("._p_filterelement")
     let selectedfilters = Array.from(document.querySelectorAll(".selected")).map(e => e.innerText)
     let selcont = document.getElementById("selectedFilters")
     let formcont = document.getElementById("selectedform")
 
-    console.log(selectedfilters)
 
     let filterClick = function(element){
         if(element.classList.contains("selected")){
@@ -85,8 +86,10 @@ document.addEventListener('turbolinks:load', (event) => {
     }
 
     let updateSelectedUI = function(){
-        selcont.innerHTML = ""
-        formcont.innerHTML = ""
+        if(selcont && formcont){
+            selcont.innerHTML = ""
+            formcont.innerHTML = ""
+        }
         selectedfilters.forEach(f => {
             let p = document.createElement("p")
             p.classList.add("_p_info")
@@ -121,16 +124,23 @@ document.addEventListener('turbolinks:load', (event) => {
         });
     });
 
-    filtersearch.addEventListener('keyup', function(){
-        Array.from(concfilters).forEach(element => {
-            if(element.classList.contains("immutable") == false 
-            && element.innerText.toLowerCase().includes(filtersearch.value.toLowerCase()) == false){
-                element.classList.add("hidden")
-            }else{
-                element.classList.remove("hidden")
-            }
+    if(filtersearch){
+
+        filtersearch.addEventListener('keyup', function(){
+            Array.from(concfilters).forEach(element => {
+                if(element.classList.contains("immutable") == false 
+                && element.innerText.toLowerCase().includes(filtersearch.value.toLowerCase()) == false){
+                    element.classList.add("hidden")
+                }else{
+                    element.classList.remove("hidden")
+                }
+            })
         })
-    })
+    }
 
     updateSelectedUI()
+
+
 })
+
+

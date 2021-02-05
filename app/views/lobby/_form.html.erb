@@ -13,12 +13,12 @@
 
   <div class="nameContainer">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, :maxlength => 25%>
   </div>
   
   <div class="descriptionContainer">
     <%= form.label :description %>
-    <%= form.text_area :description, size: "70x5" %>
+    <%= form.text_area :description, :maxlength => 220%>
   </div>
 
   <div class="maxPlayerContainer">
@@ -38,7 +38,7 @@
       </div>
   </div>
   <div class="maxPlayerContainer">
-    <p class="maxPlayerContainer">Pick filters from the header!</p>
+    <p class="filterHint">Pick filters from the header!</p>
   </div>
   <div class="dateNew">
    <label for="lobby[time]">Date and Time</label><br>

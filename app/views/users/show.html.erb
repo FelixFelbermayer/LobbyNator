@@ -1,0 +1,47 @@
+<header>
+    <h1 class="headerHeading"><a href="/">Lobbynator</a>
+</h1>
+    <nav>
+        <div class="burger">
+            <div class="burgerelement line1"></div>
+            <div class="burgerelement line2"></div>
+            <div class="burgerelement line3"></div>
+        </div>
+    </nav>
+</header>
+<ul class="nav-links">
+    <li><%= link_to "Profile",  user_registration_path+"/#{current_user.id}" ,method: :get %></li>
+    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+</ul>
+
+<section class="_section_userinfo">
+    <h2 class="_h2_sectionheading">User Info</h2>
+    <p class="togglepart">Username: <%= @user.username %></p>
+    <p class="togglepart">Email: <%= @user.email %></p>
+    <%= button_to "Edit Profile",  edit_user_registration_path , method: :get, class: "_btn_medium"%>
+</section>
+
+<main class="_main_grid">
+  <% @joinedLobbies.each do |lobby| %>
+    <div class="_div_gridcard">
+      <div class="upperInfo">
+          <h2 class="_h2_level2"><%= lobby.name%></h2>
+          <p class="_p_important"><%= lobby.date.strftime("%d.%m") %> / <%= lobby.time %></p>
+          <p class="_p_info"><%= lobby.description %></p>
+          <div>
+            <% lobby.filters.each do |filter| %>
+              <p class="_p_info"><%= filter.name %></p>
+            <% end %>
+          </div>
+      </div>   
+      <div class="_div_endFlex" >   
+          <%= button_to 'Show', lobby, class: "buttonlike", method: :get , class: "_btn_medium"%>
+        <% if current_user.id == lobby.user.id %>
+          <%= button_to 'Destroy', lobby, class: "buttonlike", method: :delete, data: { confirm: 'Are you sure?' } , class: "_btn_medium"%>      
+        <% end %>
+      </div>
+    </div>
+      <% end %>
+</main>
+<%= javascript_pack_tag 'filter', media: 'all', 'data-turbolinks-track': 'reload' %> 
+<%= javascript_pack_tag 'header', media: 'all', 'data-turbolinks-track': 'reload' %> 

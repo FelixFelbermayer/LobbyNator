@@ -1,0 +1,25 @@
+main._main_grid{
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    justify-content: space-evenly;
+    @include breakpoint(desktop1){
+        justify-content: flex-start; 
+    }
+}
+.grid::after {
+    content: "";
+    flex: auto;
+}
+#notice{
+    text-align: center;
+    font-family: 'Roboto';
+    color: white;
+    font-size: 2rem;
+    margin: 2vh 0px 2vh 0px;
+    p{
+        display: inline-block;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,55 @@
+<%= form_with model: @lobby, url: "/lobby" do |form| %>
+  <% if @lobby.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lobby.errors.count, "error") %> prohibited this cat from being saved:</h2>
+
+      <ul>
+        <% @lobby.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="nameContainer">
+    <%= form.label :name %>
+    <%= form.text_field :name, :maxlength => 25%>
+  </div>
+  
+  <div class="descriptionContainer">
+    <%= form.label :description %>
+    <%= form.text_area :description, :maxlength => 220%>
+  </div>
+
+  <div class="maxPlayerContainer">
+      <label for="lobby[maxplayers]">Lobbysize</label><br>
+      <div class="select-wrapper">
+          <select name="lobby[maxplayers]" id="maxplayers">
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+          </select>
+      </div>
+  </div>
+  <div class="maxPlayerContainer">
+    <p class="filterHint">Pick filters from the header!</p>
+  </div>
+  <div class="dateNew">
+   <label for="lobby[time]">Date and Time</label><br>
+    <%= form.date_field :date %>
+    <%= form.time_field :time %>
+  </div>
+
+  <div id="selectedform">
+  </div>
+  
+  <div class="actions">
+    <%= form.submit class: "_btn_medium" %>
+  </div>
+<% end %>

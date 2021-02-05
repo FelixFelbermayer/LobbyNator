@@ -1,0 +1,159 @@
+section._section_lobby{
+    margin-bottom: 20vh;
+    padding: 20px;
+    div._div_lobbymeta{
+        h2{
+            font-size: 2.5rem;
+            font-family: 'Roboto';
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        div._div_subsection{
+            h3{
+                font-size: 2rem;
+                font-family: 'Roboto';
+                border-bottom: 1px solid $filtergrey;
+                margin-bottom: 10px;
+                padding-bottom: 0.5rem;
+                padding-top: 0.5rem;
+                &:hover{
+                    cursor: pointer;
+                    color: orange;
+                }
+            }
+            div._div_subsection_content{
+                display: none;
+                &:last-of-type{
+                    margin-bottom: 10px;
+                }
+            }
+
+            &.active{
+                h3{
+                    border-bottom: 2px solid black;
+                }
+                div._div_subsection_content{
+                    display: inline-block;
+                    p{
+                        font-family: 'Roboto';
+                        font-size: 1.2rem;
+                    }
+                }
+
+                div._div_flextags{
+                    display: flex;
+                    gap: 0.5rem;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+
+    div._div_chat{
+        font-family: 'Roboto';
+        margin-top: 20px;
+        margin-bottom: 10px;
+        h3{
+            font-size: 2rem;
+            font-family: 'Roboto';
+            margin-bottom: 10px;
+            padding-bottom: 0.5rem;
+            padding-top: 0.5rem;
+        }
+        ._ul_chatmessages{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px 5px;
+            overflow-y: auto;
+            max-height: 70vh;
+            li._li_message{
+                word-break: break-all;
+                align-self: flex-start;
+                display: inline-block;
+                box-shadow: 3px 3px 3px rgba(130,130,130,0.5);
+                border: 1px solid $filtergrey;
+                padding: 5px;
+                width: 70%;
+                border-radius: 10px;
+                background-color: orange;
+                ._p_message_author{
+                    text-align: right;
+                }
+            }
+
+            li._li_message_self{
+                align-self: flex-end;
+            }
+        }
+
+        form{
+            display: flex;
+            input[type="text"]{
+                flex-grow: 4;
+                font-size: 1.2rem;
+                border-radius: 10px;
+                border: 1px solid $filtergrey;
+                padding: 5px 10px;
+            }
+            input[type="submit"]{
+            }
+        }
+    }
+}
+
+p._p_lobbytag{
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    font-family: Roboto;
+    white-space: nowrap;
+    @include breakpoint(tablet){
+        font-size: 1.2rem;
+    }
+}
+
+@include breakpoint(desktop1){
+    section._section_lobby{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-height: 800px;
+        padding: 0 5vw 0 5vw;
+      
+
+        div._div_lobbymeta{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 10px;
+
+            h2{
+                text-align: center;
+            }
+
+            button{
+                justify-self: flex-end;
+                align-self: center;
+            }
+        }
+        div._div_chat{
+            h3{
+                display: none;
+            }
+            padding: 0px 5px 5px 5px;
+            margin: 0;
+        }
+    }   
+}
+._div_lobbymeta, ._ul_chatmessages{
+    margin-top: 5vh;
+    background-color: white;
+    padding: 7px;
+    min-height: 40vh;
+}
+.filterHint{
+    font-family: Roboto;
+    font-size: 1.2rem;
+}

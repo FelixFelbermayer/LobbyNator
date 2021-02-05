@@ -1,0 +1,29 @@
+h2._h2_sectionheading{
+    font-family: 'Snes';
+    color: orange;
+    font-size: 3rem;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+section._section_userinfo{
+    .disabled{
+        display: none;
+    }
+    p, label{
+        font-size: 1.2rem;
+        font-family: 'Roboto';
+        margin-bottom: 0.5rem;
+    }
+    input[type="submit"]{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* .profileCards{
+    display: flex;
+} */

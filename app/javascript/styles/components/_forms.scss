@@ -1,0 +1,25 @@
+form._form_userform {
+    margin: 0 auto;
+    
+    color: black;
+    
+    text-align: center;
+    .field {
+        input {
+            font-family: 'Roboto';
+            font-size: 1.2rem;
+            border-radius: 10px;
+        }
+        label {
+            font-family: 'Roboto';
+            font-size: 1.2rem;
+        }
+        em, i {
+            color: black;
+            font-family: 'Roboto';
+            font-size: 1rem;
+            font-weight: 200;
+        }
+        margin-bottom: 10px;
+    }
+}

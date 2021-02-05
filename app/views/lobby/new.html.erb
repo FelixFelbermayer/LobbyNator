@@ -1,0 +1,63 @@
+<header>
+    <h1 class="headerHeading"><a href="/">Lobbynator</a></h1>
+    <div class="_div_heading_middle">
+        <% @categories.each do |cat| %>
+          <button class="_btn_header after_tablet openfilters _btn_cat">
+              <%= cat.name %>
+          </button>
+        <% end %>
+    </div>
+    <nav>
+        <div class="burger">
+            <div class="burgerelement line1"></div>
+            <div class="burgerelement line2"></div>
+            <div class="burgerelement line3"></div>
+        </div>
+    </nav>
+</header>
+<ul class="nav-links">
+    <li><%= link_to "Profile",  user_registration_path+"/#{current_user.id}" ,method: :get %></li>
+    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+    <li><%=  link_to 'New Lobby', "#{new_lobby_path}", class: "till_desktop", method: :get %></li>
+    <li class="till_desktop openfilters">Filters</li>
+</ul>
+<section class="_section_pagemeta disabled">
+    <div>
+        <div class="_div_flexwrap">
+          <% @categories.each do |cat| %>
+            <button class="_btn_header till_desktop _btn_cat2">
+                <%= cat.name %>
+            </button>
+          <% end %>
+        </div>
+
+        <input type="text" placeholder="Filter Tags" id="filtersearch">  
+        
+        <% @categories.each do |cat| %>
+          <div class="_div_filterlist _div_filtercategory disabled">
+            <% cat.filters.each do |filter| %>
+                <p class="_p_info _p_filterelement"><%= filter.name %></p>
+          
+            <% end %>
+          </div>
+        <% end %>
+        <div class="_div_filterlist" id="selectedFilters">
+        </div>
+    </div>
+    <div class="_div_flexaround">
+        <button class="_btn_filter" id="closefilters">Close</button>
+    </div>
+</section>
+<div><p id="notice"><%= notice %></p></div>
+<h1 class="_h2_level1 _text_center">Create new Lobby</h1>
+<main>
+    <div class="createLobbyContainer">
+<%= render 'form', lobby: @lobby %>
+    </div>
+</main>
+
+
+
+
+
+

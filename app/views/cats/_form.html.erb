@@ -21,7 +21,11 @@
     <%= form.label :catpic %>
     <%= form.file_field :catpic %>
   </div>
-
+  
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, size: "70x5" %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

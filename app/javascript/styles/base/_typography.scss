@@ -1,0 +1,50 @@
+._p_important{
+    color: orange;
+    font-family: 'Roboto';
+    font-size: 1.4rem;
+}
+._p_info, ._p_lobbyfill{
+    font-family: 'Roboto';
+    font-size: 1rem;
+    min-width: 70px;
+    color: white;
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+._p_text{
+    font-family: 'Roboto';
+    font-size: 1rem;
+    min-width: 70px;
+    color: white;
+    word-break: break-word;
+}
+
+.maxPlayer{
+    font-family: Roboto;
+    color: white;
+    font-size: 1.5rem;
+}
+._p_lobbyfill{
+    color: black;
+}
+
+._h2_level2{
+    font-family: 'Roboto';
+    font-size: 1.3rem;
+    color: white;
+}
+._h2_level1{
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+._text_center{
+    text-align: center;
+}
+._text_center_block{
+    display: block;
+    text-align: center;
+}

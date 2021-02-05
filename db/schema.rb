@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_084703) do
+ActiveRecord::Schema.define(version: 2021_02_03_170706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,5 +42,75 @@ ActiveRecord::Schema.define(version: 2021_01_25_084703) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "chatmessages", force: :cascade do |t|
+    t.string "text"
+    t.bigint "lobby_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lobby_id"], name: "index_chatmessages_on_lobby_id"
+    t.index ["user_id"], name: "index_chatmessages_on_user_id"
+  end
+
+  create_table "filtercategories", force: :cascade do |t|
+    t.string "name"
+    t.boolean "singular", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "filters", force: :cascade do |t|
+    t.string "name"
+    t.bigint "filtercategory_id"
+    t.bigint "true_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["filtercategory_id"], name: "index_filters_on_filtercategory_id"
+    t.index ["true_id"], name: "index_filters_on_true_id"
+  end
+
+  create_table "filters_lobbies", id: false, force: :cascade do |t|
+    t.bigint "filter_id", null: false
+    t.bigint "lobby_id", null: false
+  end
+
+  create_table "filters_users", id: false, force: :cascade do |t|
+    t.bigint "filter_id", null: false
+    t.bigint "user_id", null: false
+  end
+
+  create_table "lobbies", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.bigint "user_id"
+    t.date "date"
+    t.string "time"
+    t.integer "maxplayers"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_lobbies_on_user_id"
+  end
+
+  create_table "lobbies_users", id: false, force: :cascade do |t|
+    t.bigint "lobby_id", null: false
+    t.bigint "user_id", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "username"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "chatmessages", "lobbies"
+  add_foreign_key "chatmessages", "users"
+  add_foreign_key "lobbies", "users"
 end

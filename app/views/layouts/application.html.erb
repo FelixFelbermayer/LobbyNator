@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>BestCats</title>
+    <title>LobbyNator</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <%= favicon_pack_tag 'favicon-32x32.png' %>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
   </head>
 
   <body>
-    <nav>
-      <%= link_to "Katzen", root_path %>
-    </nav>
-    <div><p id="notice"><%= notice %></p></div>
-    <%= yield %>
+      
+    <%= yield %>   
+
   </body>
 </html>

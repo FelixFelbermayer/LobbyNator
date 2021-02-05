@@ -1,3 +1,9 @@
+Lobby.delete_all
+Filter.delete_all
+Chatmessage.delete_all
+Filtercategory.delete_all
+User.delete_all
+
 cat = Filtercategory.create(name: "Game", singular: true)
 strikt = cat.filters.create(name: "Counter Strike")
 lol = cat.filters.create(name: "League of Legends")
@@ -42,9 +48,9 @@ l2.users.push(feci)
 l2.users.push(stef)
 l3.users.push(feci)
 
-l.save()
-l2.save()
-l3.save()
+l.save
+l2.save
+l3.save
 
 
 strikt.filter_image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'CSGO.jpg')), filename: 'CSGO.jpg')

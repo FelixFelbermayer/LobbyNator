@@ -26,7 +26,7 @@
     <div class="_div_gridcard">
       <div class="upperInfo">
           <h2 class="_h2_level2"><%= lobby.name%></h2>
-          <p class="_p_important"><%= lobby.date %> <%= lobby.time %></p>
+          <p class="_p_important"><%= lobby.date.strftime("%d.%m") %> / <%= lobby.time %></p>
           <p class="_p_info"><%= lobby.description %></p>
           <div>
             <% lobby.filters.each do |filter| %>

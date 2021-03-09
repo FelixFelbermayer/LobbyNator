@@ -117,7 +117,7 @@ class LobbyController < ApplicationController
 
     set_games
 
-    return unless singular.singular.positive?
+    return unless singular.size.positive?
 
     @games = @games.select do |gem|
       singular.include?(gem)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Chatmessage.delete_all
 Lobby.delete_all
 Filter.delete_all
@@ -52,11 +54,10 @@ l.save
 l2.save
 l3.save
 
-
-strikt.filter_image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'CSGO.jpg')), filename: 'CSGO.jpg')
-lol.filter_image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'lol.jpg')), filename: 'lol.jpg')
-au.filter_image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'among.jpg')), filename: 'among.jpg')
-nfs.filter_image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'nfs.jpg')), filename: 'nfs.jpg')
+strikt.filter_image.attach(io: File.open(Rails.root.join("app", "assets", "images", "CSGO.jpg")), filename: "CSGO.jpg")
+lol.filter_image.attach(io: File.open(Rails.root.join("app", "assets", "images", "lol.jpg")), filename: "lol.jpg")
+au.filter_image.attach(io: File.open(Rails.root.join("app", "assets", "images", "among.jpg")), filename: "among.jpg")
+nfs.filter_image.attach(io: File.open(Rails.root.join("app", "assets", "images", "nfs.jpg")), filename: "nfs.jpg")
 strikt.save
 lol.save
 au.save

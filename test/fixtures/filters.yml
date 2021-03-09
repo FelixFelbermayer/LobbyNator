@@ -4,8 +4,14 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+filter_1: 
+  filtercategory: category_1
+  name: "Filter 1"
+  lobbies: lobby_1
 # column: value
 #
-two: {}
+filter_2: 
+  filtercategory: category_1
+  name: "Filter 2"
+  lobbies: lobby_2
 # column: value

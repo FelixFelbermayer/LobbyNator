@@ -4,8 +4,11 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+message_1: 
+  lobby: lobby_1
+  text: "Testmessage"
+  
+  created_at: "2021-03-09 16:29:54"
+  updated_at: "2021-03-09 16:29:54"
 # column: value
-#
-two: {}
-# column: value
+# 

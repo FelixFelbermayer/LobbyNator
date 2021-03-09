@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CatsController < ApplicationController
-  before_action :set_cat, only: %i[ show edit update destroy ]
+  before_action :set_cat, only: %i[show edit update destroy]
 
   # GET /cats or /cats.json
   def index
@@ -7,8 +9,7 @@ class CatsController < ApplicationController
   end
 
   # GET /cats/1 or /cats/1.json
-  def show
-  end
+  def show; end
 
   # GET /cats/new
   def new
@@ -16,8 +17,7 @@ class CatsController < ApplicationController
   end
 
   # GET /cats/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /cats or /cats.json
   def create
@@ -57,13 +57,14 @@ class CatsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_cat
-      @cat = Cat.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def cat_params
-      params.require(:cat).permit(:name, :catpic)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_cat
+    @cat = Cat.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def cat_params
+    params.require(:cat).permit(:name, :catpic)
+  end
 end
